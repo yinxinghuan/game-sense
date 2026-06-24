@@ -33,6 +33,8 @@ const S: Dict = {
   allSorted: { en: 'All sorted! Lock it in below', zh: '都分好了！下方确认' },
   dragHint: { en: 'Drag each into a bucket', zh: '把每个拖进桶里' },
   sliderHint: { en: 'Drag to the right spot, then lock', zh: '拖到对的位置，再确认' },
+  dialHint: { en: 'Twist the knob, then lock', zh: '旋动旋钮，再确认' },
+  leverHint: { en: 'Pull the handle of the right one', zh: '拉下你认为对的那个把手' },
   next: { en: 'NEXT ▸', zh: '下一题 ▸' },
   finish: { en: 'HOW DID I DO? ▸', zh: '我考得咋样 ▸' },
   finalScore: { en: 'YOUR SCORE', zh: '你的得分' },

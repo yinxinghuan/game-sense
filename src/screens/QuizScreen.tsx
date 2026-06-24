@@ -7,6 +7,8 @@ import { burst, floatScore } from '../lib/fx';
 import { hitShout, missShout, streakShout, faceRight, faceWrong } from '../lib/shouts';
 import SliderQ from '../widgets/SliderQ';
 import DragQ from '../widgets/DragQ';
+import DialQ from '../widgets/DialQ';
+import LeverQ from '../widgets/LeverQ';
 
 const NUM = 14;
 const Q_TIME = 18000;
@@ -29,7 +31,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 function buildRound(): ShuffledQuestion[] {
   const all = questionsData as Question[];
-  const inter = all.filter((q) => q.type === 'slider' || q.type === 'drag');
+  const inter = shuffle(all.filter((q) => !isMcq(q)));
   const mcq = shuffle(all.filter(isMcq));
   // ensure the interactive questions show up, then fill with random mcq
   const chosen = shuffle([...inter, ...mcq.slice(0, Math.max(0, NUM - inter.length))]).slice(0, NUM);
@@ -41,12 +43,20 @@ function buildRound(): ShuffledQuestion[] {
   }));
 }
 
-function ComicBurst({ b }: { b: { word: string; color: string; id: number } | null }) {
+interface Burst { word: string; front: string; mid: string; ray: string; rot: number; shape: number; id: number; }
+
+function ComicBurst({ b }: { b: Burst | null }) {
   if (!b) return null;
   return (
-    <div className="cburst" key={b.id}>
-      <div className="star" style={{ background: b.color }} />
-      <div className="word">{b.word}</div>
+    <div className="cburst" key={b.id} style={{ ['--rot' as any]: b.rot + 'deg' }}>
+      <div className="cburstInner">
+        <div className="rays" style={{ background: `repeating-conic-gradient(from 0deg, ${b.ray} 0deg 7deg, transparent 7deg 15deg)` }} />
+        <div className={'star back s' + b.shape} />
+        <div className={'star mid s' + b.shape} style={{ background: b.mid }} />
+        <div className={'star front s' + b.shape} style={{ background: b.front }} />
+        <div className="word">{b.word}</div>
+        {[0, 1, 2, 3, 4, 5].map((i) => <span key={i} className={'spark sp' + i}>★</span>)}
+      </div>
     </div>
   );
 }
@@ -64,7 +74,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
   const [answered, setAnswered] = useState(false);
   const [wasRight, setWasRight] = useState(false);
   const [face, setFace] = useState('🤔');
-  const [cb, setCb] = useState<{ word: string; color: string; id: number } | null>(null);
+  const [cb, setCb] = useState<Burst | null>(null);
   const cbId = useRef(0);
   const qStartRef = useRef(Date.now());
   const comboRef = useRef<HTMLDivElement>(null);
@@ -72,11 +82,17 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
 
   const q = round[idx];
 
-  const showBurst = (word: string, color: string) => {
+  const PALETTE: Record<string, { front: string; mid: string; ray: string }> = {
+    hit: { front: '#ffd60a', mid: '#e63946', ray: 'rgba(255,214,10,0.5)' },
+    miss: { front: '#ffffff', mid: '#e63946', ray: 'rgba(230,57,70,0.4)' },
+    streak: { front: '#ff6b9d', mid: '#2c6df4', ray: 'rgba(255,107,157,0.5)' },
+  };
+  const showBurst = (word: string, kind: 'hit' | 'miss' | 'streak') => {
     cbId.current += 1;
     const id = cbId.current;
-    setCb({ word, color, id });
-    setTimeout(() => setCb((c) => (c && c.id === id ? null : c)), 800);
+    const p = PALETTE[kind];
+    setCb({ word, ...p, rot: Math.round(Math.random() * 36 - 18), shape: Math.floor(Math.random() * 3), id });
+    setTimeout(() => setCb((c) => (c && c.id === id ? null : c)), 820);
   };
 
   // shared scoring + juice for every question type
@@ -102,10 +118,10 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       if (nc >= 2) sfx.combo(nc);
       haptic([10, 30, 10]);
       burst(x, y, 18);
-      showBurst(hitShout() + (frac > 0.6 ? ' ⚡' : ''), '#ffd60a');
+      showBurst(hitShout() + (frac > 0.6 ? ' ⚡' : ''), 'hit');
       floatScore('+' + gained, '#3fb950');
       if (nc === 3 || nc === 5 || nc === 7 || nc === 10) {
-        setTimeout(() => showBurst(streakShout(), '#e63946'), 320);
+        setTimeout(() => showBurst(streakShout(), 'streak'), 340);
       }
       comboRef.current?.classList.remove('pop');
       void comboRef.current?.offsetWidth;
@@ -115,7 +131,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       setFace(faceWrong());
       sfx.wrong();
       haptic([40, 30, 40]);
-      showBurst(missShout(), '#e63946');
+      showBurst(missShout(), 'miss');
       if (stageRef.current) {
         stageRef.current.classList.remove('shake');
         void stageRef.current.offsetWidth;
@@ -174,7 +190,11 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
     return c;
   };
 
-  const hint = q.type === 'slider' ? t('sliderHint') : q.type === 'drag' ? t('dragHint') : q.multi ? t('multiHint') : '';
+  const hint = q.type === 'slider' ? t('sliderHint')
+    : q.type === 'drag' ? t('dragHint')
+    : q.type === 'dial' ? t('dialHint')
+    : q.type === 'lever' ? t('leverHint')
+    : q.multi ? t('multiHint') : '';
 
   return (
     <div className="quiz" ref={stageRef} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
@@ -221,6 +241,8 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
 
         {q.type === 'slider' && <SliderQ q={q} answered={answered} onResolve={resolve} />}
         {q.type === 'drag' && <DragQ q={q} answered={answered} onResolve={resolve} />}
+        {q.type === 'dial' && <DialQ q={q} answered={answered} onResolve={resolve} />}
+        {q.type === 'lever' && <LeverQ q={q} answered={answered} onResolve={resolve} />}
 
         {answered && (
           <div className="explain">

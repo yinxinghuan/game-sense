@@ -1,5 +1,187 @@
 [
   {
+    "id": "DL1",
+    "cat": "ixd",
+    "diff": "A",
+    "type": "dial",
+    "img": "2.3.png",
+    "q": {
+      "en": "Turn the dial to the number of menu choices that's fastest to decide from.",
+      "zh": "把旋钮转到「最容易快速做决定」的菜单选项数量。"
+    },
+    "dial": {
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "start": 12,
+      "target": [
+        2,
+        4
+      ],
+      "unit": "",
+      "preview": "count"
+    },
+    "explain": {
+      "en": "Hick's Law: more choices = slower decisions. Few, clear options win.",
+      "zh": "Hick 定律：选项越多决定越慢。少而清晰更优。"
+    }
+  },
+  {
+    "id": "DL2",
+    "cat": "feed",
+    "diff": "B",
+    "type": "dial",
+    "img": "1.2.png",
+    "q": {
+      "en": "Turn the dial to how many seconds you've got before a feed player swipes away.",
+      "zh": "把旋钮转到：feed 玩家划走前你大约有几秒。"
+    },
+    "dial": {
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "start": 20,
+      "target": [
+        1,
+        3
+      ],
+      "unit": "s"
+    },
+    "explain": {
+      "en": "~2 seconds. Zero context, near-zero patience — be instantly graspable.",
+      "zh": "约 2 秒。零上下文、近乎零耐心——必须即点即懂。"
+    }
+  },
+  {
+    "id": "LV1",
+    "cat": "core",
+    "diff": "A",
+    "type": "lever",
+    "img": "1.3.png",
+    "q": {
+      "en": "Three reward machines. Pull the one that keeps players hooked.",
+      "zh": "三台奖励机。拉下最能让玩家上瘾的那台。"
+    },
+    "lever": {
+      "machines": [
+        {
+          "label": {
+            "en": "Every tap pays the same",
+            "zh": "每次点击都给固定奖励"
+          },
+          "correct": false
+        },
+        {
+          "label": {
+            "en": "Random surprise payout",
+            "zh": "随机惊喜奖励"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Pays only at the very end",
+            "zh": "只在最后才给"
+          },
+          "correct": false
+        }
+      ]
+    },
+    "explain": {
+      "en": "Variable / intermittent reward is the strongest hook — the slot-machine effect.",
+      "zh": "可变（间歇）奖励最上头——老虎机效应。"
+    }
+  },
+  {
+    "id": "S3",
+    "cat": "ixd",
+    "diff": "A",
+    "type": "slider",
+    "img": "2.5.png",
+    "q": {
+      "en": "Drag to the longest response delay that still feels 'instant'.",
+      "zh": "拖到「仍感觉即时」的最长反馈延迟。"
+    },
+    "slider": {
+      "min": 0,
+      "max": 600,
+      "step": 20,
+      "start": 0,
+      "target": [
+        60,
+        160
+      ],
+      "unit": "ms",
+      "low": {
+        "en": "instant",
+        "zh": "即时"
+      },
+      "high": {
+        "en": "laggy",
+        "zh": "卡顿"
+      }
+    },
+    "explain": {
+      "en": "Up to ~0.1s feels instant. Past that it starts to feel laggy.",
+      "zh": "约 0.1 秒内感觉即时，超过就开始觉得卡。"
+    }
+  },
+  {
+    "id": "D3",
+    "cat": "social",
+    "diff": "A",
+    "type": "drag",
+    "img": "6.2.png",
+    "q": {
+      "en": "Sort each notification: healthy or spammy?",
+      "zh": "给每条通知分类：健康还是骚扰？"
+    },
+    "drag": {
+      "yes": {
+        "en": "HEALTHY",
+        "zh": "健康"
+      },
+      "no": {
+        "en": "SPAMMY",
+        "zh": "骚扰"
+      },
+      "items": [
+        {
+          "label": {
+            "en": "Triggered by a real person acting on your stuff",
+            "zh": "真人对你的内容操作触发"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "From a real friend, deduped",
+            "zh": "来自真朋友、已去重"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Notifies you about your own actions",
+            "zh": "因你自己的操作通知你"
+          },
+          "correct": false
+        },
+        {
+          "label": {
+            "en": "Repeats every minute regardless",
+            "zh": "不论如何每分钟重复"
+          },
+          "correct": false
+        }
+      ]
+    },
+    "explain": {
+      "en": "Healthy = real others' actions, self-guarded & deduped. Spammy = self-notify or repeats.",
+      "zh": "健康=真人他者操作+自守卫去重；骚扰=自我通知或重复轰炸。"
+    }
+  },
+  {
     "id": "S1",
     "cat": "ixd",
     "diff": "B",
