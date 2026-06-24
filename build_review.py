@@ -25,15 +25,34 @@ cards = []
 for i, q in enumerate(Q):
     cc = CATCOLOR.get(q["cat"], "#111")
     opts = []
-    for j, o in enumerate(q["options"]):
-        right = j in q["correct"]
-        cls = "opt right" if right else "opt"
-        tick = "✓ " if right else ""
-        opts.append(
-            f'<li class="{cls}"><b>{tick}</b>{html.escape(o["en"])}'
-            f'<span class="z">{html.escape(o["zh"])}</span></li>')
+    qtype = q.get("type", "mcq")
+    if q.get("options"):
+        for j, o in enumerate(q["options"]):
+            right = j in q.get("correct", [])
+            cls = "opt right" if right else "opt"
+            tick = "✓ " if right else ""
+            opts.append(
+                f'<li class="{cls}"><b>{tick}</b>{html.escape(o["en"])}'
+                f'<span class="z">{html.escape(o["zh"])}</span></li>')
+    elif qtype == "drag":
+        for it in q["drag"]["items"]:
+            b = q["drag"]["yes"]["en"] if it["correct"] else q["drag"]["no"]["en"]
+            opts.append(f'<li class="opt"><b>[{html.escape(b)}]</b> {html.escape(it["label"]["en"])}'
+                        f'<span class="z">{html.escape(it["label"]["zh"])}</span></li>')
+    elif qtype == "lever":
+        for m in q["lever"]["machines"]:
+            tick = "✓ " if m["correct"] else ""
+            cls = "opt right" if m["correct"] else "opt"
+            opts.append(f'<li class="{cls}"><b>{tick}</b>{html.escape(m["label"]["en"])}'
+                        f'<span class="z">{html.escape(m["label"]["zh"])}</span></li>')
+    elif qtype in ("slider", "dial"):
+        c = q[qtype]
+        opts.append(f'<li class="opt right"><b>✓ </b>target {c["target"][0]}–{c["target"][1]}{c.get("unit","")} '
+                    f'(range {c["min"]}–{c["max"]})</li>')
     diff = "ADVANCED" if q["diff"] == "A" else "BASIC"
-    multi = '<span class="tag multi">MULTI</span>' if q["multi"] else ""
+    multi = '<span class="tag multi">MULTI</span>' if q.get("multi") else ""
+    if qtype != "mcq":
+        multi += f'<span class="tag multi">🎮 {qtype.upper()}</span>'
     cards.append(f'''
     <div class="card">
       <div class="head">

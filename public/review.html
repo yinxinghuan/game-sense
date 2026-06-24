@@ -34,13 +34,139 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
 </style></head><body>
 <div class="top">
   <h1>GAME SENSE — QUESTION REVIEW</h1>
-  <p>32 questions · 32/32 with art · green = correct answer · EN + 中文 shown together</p>
+  <p>41 questions · 41/41 with art · green = correct answer · EN + 中文 shown together</p>
   <p>评审用：圈出要改的题/选项/解析，或要重出的图。English 默认面向终端用户，中文为可切备选。</p>
 </div>
 <div class="grid">
     <div class="card">
       <div class="head">
         <span class="num">#1</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 DIAL</span>
+        <span class="qid">DL1</span>
+      </div>
+      <img class="qi" src="q/2.3.png" alt="" loading="lazy">
+      <div class="qt">Turn the dial to the number of menu choices that&#x27;s fastest to decide from.</div>
+      <div class="qz">把旋钮转到「最容易快速做决定」的菜单选项数量。</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>target 2–4 (range 2–12)</li></ul>
+      <div class="exp"><b>WHY</b> Hick&#x27;s Law: more choices = slower decisions. Few, clear options win.
+        <span class="z">Hick 定律：选项越多决定越慢。少而清晰更优。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#2</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">BASIC</span><span class="tag multi">🎮 DIAL</span>
+        <span class="qid">DL2</span>
+      </div>
+      <img class="qi" src="q/1.2.png" alt="" loading="lazy">
+      <div class="qt">Turn the dial to how many seconds you&#x27;ve got before a feed player swipes away.</div>
+      <div class="qz">把旋钮转到：feed 玩家划走前你大约有几秒。</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>target 1–3s (range 1–20)</li></ul>
+      <div class="exp"><b>WHY</b> ~2 seconds. Zero context, near-zero patience — be instantly graspable.
+        <span class="z">约 2 秒。零上下文、近乎零耐心——必须即点即懂。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#3</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 LEVER</span>
+        <span class="qid">LV1</span>
+      </div>
+      <img class="qi" src="q/1.3.png" alt="" loading="lazy">
+      <div class="qt">Three reward machines. Pull the one that keeps players hooked.</div>
+      <div class="qz">三台奖励机。拉下最能让玩家上瘾的那台。</div>
+      <ul class="opts"><li class="opt"><b></b>Every tap pays the same<span class="z">每次点击都给固定奖励</span></li><li class="opt right"><b>✓ </b>Random surprise payout<span class="z">随机惊喜奖励</span></li><li class="opt"><b></b>Pays only at the very end<span class="z">只在最后才给</span></li></ul>
+      <div class="exp"><b>WHY</b> Variable / intermittent reward is the strongest hook — the slot-machine effect.
+        <span class="z">可变（间歇）奖励最上头——老虎机效应。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#4</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 SLIDER</span>
+        <span class="qid">S3</span>
+      </div>
+      <img class="qi" src="q/2.5.png" alt="" loading="lazy">
+      <div class="qt">Drag to the longest response delay that still feels &#x27;instant&#x27;.</div>
+      <div class="qz">拖到「仍感觉即时」的最长反馈延迟。</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>target 60–160ms (range 0–600)</li></ul>
+      <div class="exp"><b>WHY</b> Up to ~0.1s feels instant. Past that it starts to feel laggy.
+        <span class="z">约 0.1 秒内感觉即时，超过就开始觉得卡。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#5</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 DRAG</span>
+        <span class="qid">D3</span>
+      </div>
+      <img class="qi" src="q/6.2.png" alt="" loading="lazy">
+      <div class="qt">Sort each notification: healthy or spammy?</div>
+      <div class="qz">给每条通知分类：健康还是骚扰？</div>
+      <ul class="opts"><li class="opt"><b>[HEALTHY]</b> Triggered by a real person acting on your stuff<span class="z">真人对你的内容操作触发</span></li><li class="opt"><b>[HEALTHY]</b> From a real friend, deduped<span class="z">来自真朋友、已去重</span></li><li class="opt"><b>[SPAMMY]</b> Notifies you about your own actions<span class="z">因你自己的操作通知你</span></li><li class="opt"><b>[SPAMMY]</b> Repeats every minute regardless<span class="z">不论如何每分钟重复</span></li></ul>
+      <div class="exp"><b>WHY</b> Healthy = real others&#x27; actions, self-guarded &amp; deduped. Spammy = self-notify or repeats.
+        <span class="z">健康=真人他者操作+自守卫去重；骚扰=自我通知或重复轰炸。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#6</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">BASIC</span><span class="tag multi">🎮 SLIDER</span>
+        <span class="qid">S1</span>
+      </div>
+      <img class="qi" src="q/2.4.png" alt="" loading="lazy">
+      <div class="qt">Drag to size a button so it&#x27;s comfy to tap with a thumb.</div>
+      <div class="qz">拖动，把按钮调到拇指点着舒服的大小。</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>target 44–72px (range 16–96)</li></ul>
+      <div class="exp"><b>WHY</b> ~44px is the comfy minimum tap target — big enough that thumbs don&#x27;t miss.
+        <span class="z">约 44px 是舒适的最小点击目标——大到拇指不会按偏。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#7</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 SLIDER</span>
+        <span class="qid">S2</span>
+      </div>
+      <img class="qi" src="q/1.6.png" alt="" loading="lazy">
+      <div class="qt">Slide the difficulty into the &#x27;flow&#x27; sweet spot — watch the face.</div>
+      <div class="qz">把难度滑到「心流」甜区——看表情找。</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>target 40–68 (range 0–100)</li></ul>
+      <div class="exp"><b>WHY</b> Flow lives just above your skill — not bored, not panicked.
+        <span class="z">心流就在略高于你技能的地方——不无聊、不慌。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#8</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">BASIC</span><span class="tag multi">🎮 DRAG</span>
+        <span class="qid">D1</span>
+      </div>
+      <img class="qi" src="q/4.6.png" alt="" loading="lazy">
+      <div class="qt">Drag what makes a feed game graspable in seconds vs what adds friction.</div>
+      <div class="qz">把&quot;让 feed 游戏秒懂&quot;的拖去左边，&quot;添堵&quot;的拖去右边。</div>
+      <ul class="opts"><li class="opt"><b>[GRASPABLE]</b> No rules to learn<span class="z">没有规则要学</span></li><li class="opt"><b>[GRASPABLE]</b> Self-explanatory UI<span class="z">自解释的界面</span></li><li class="opt"><b>[GRASPABLE]</b> Instant feedback on tap<span class="z">点击即时反馈</span></li><li class="opt"><b>[FRICTION]</b> Forced settings step<span class="z">强制设置步骤</span></li><li class="opt"><b>[FRICTION]</b> Required signup<span class="z">强制注册</span></li></ul>
+      <div class="exp"><b>WHY</b> No rules, self-explanatory visuals and instant feedback win; settings and signups kill it before the fun.
+        <span class="z">无规则、自解释、即时反馈取胜；设置和注册在乐趣前劝退。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#9</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">🎮 DRAG</span>
+        <span class="qid">D2</span>
+      </div>
+      <img class="qi" src="q/6.6.png" alt="" loading="lazy">
+      <div class="qt">Sort each loop: does it bring the SAME user back, or bring NEW users in?</div>
+      <div class="qz">给每个循环分类：是把同一个用户拉回来，还是带来新用户？</div>
+      <ul class="opts"><li class="opt"><b>[RETENTION]</b> Daily streak reminder<span class="z">每日连击提醒</span></li><li class="opt"><b>[RETENTION]</b> &quot;You got passed!&quot; ping<span class="z">&quot;你被超了&quot;提醒</span></li><li class="opt"><b>[VIRALITY]</b> Invite-a-friend reward<span class="z">邀请好友奖励</span></li><li class="opt"><b>[VIRALITY]</b> Share your result<span class="z">分享你的成绩</span></li></ul>
+      <div class="exp"><b>WHY</b> Retention = come back (streaks, rivalry pings). Virality = bring a friend (invites, shares).
+        <span class="z">留存=回来（连击、对手提醒）；病毒=带人来（邀请、分享）。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#10</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">BASIC</span>
         <span class="qid">1.1</span>
@@ -54,7 +180,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#2</span>
+        <span class="num">#11</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">BASIC</span>
         <span class="qid">1.2</span>
@@ -68,7 +194,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#3</span>
+        <span class="num">#12</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">1.3</span>
@@ -82,7 +208,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#4</span>
+        <span class="num">#13</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">1.4</span>
@@ -96,7 +222,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#5</span>
+        <span class="num">#14</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">BASIC</span>
         <span class="qid">1.5</span>
@@ -110,7 +236,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#6</span>
+        <span class="num">#15</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">1.6</span>
@@ -124,7 +250,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#7</span>
+        <span class="num">#16</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">BASIC</span>
         <span class="qid">1.7</span>
@@ -138,7 +264,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#8</span>
+        <span class="num">#17</span>
         <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
         <span class="tag d">BASIC</span>
         <span class="qid">1.8</span>
@@ -152,7 +278,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#9</span>
+        <span class="num">#18</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">BASIC</span>
         <span class="qid">2.1</span>
@@ -166,7 +292,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#10</span>
+        <span class="num">#19</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">2.2</span>
@@ -180,7 +306,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#11</span>
+        <span class="num">#20</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">2.3</span>
@@ -194,7 +320,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#12</span>
+        <span class="num">#21</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">BASIC</span>
         <span class="qid">2.4</span>
@@ -208,7 +334,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#13</span>
+        <span class="num">#22</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">2.5</span>
@@ -222,7 +348,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#14</span>
+        <span class="num">#23</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">2.6</span>
@@ -236,7 +362,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#15</span>
+        <span class="num">#24</span>
         <span class="tag" style="background:#9b59b6">INTERACTION</span>
         <span class="tag d">BASIC</span>
         <span class="qid">2.7</span>
@@ -250,7 +376,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#16</span>
+        <span class="num">#25</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">3.1</span>
@@ -264,7 +390,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#17</span>
+        <span class="num">#26</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">3.2</span>
@@ -278,7 +404,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#18</span>
+        <span class="num">#27</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">3.3</span>
@@ -292,7 +418,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#19</span>
+        <span class="num">#28</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">3.4</span>
@@ -306,7 +432,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#20</span>
+        <span class="num">#29</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">3.5</span>
@@ -320,7 +446,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#21</span>
+        <span class="num">#30</span>
         <span class="tag" style="background:#e63946">GAME FEEL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">3.6</span>
@@ -334,7 +460,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#22</span>
+        <span class="num">#31</span>
         <span class="tag" style="background:#f97316">FEED UX</span>
         <span class="tag d">BASIC</span>
         <span class="qid">4.1</span>
@@ -348,7 +474,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#23</span>
+        <span class="num">#32</span>
         <span class="tag" style="background:#f97316">FEED UX</span>
         <span class="tag d">BASIC</span>
         <span class="qid">4.2</span>
@@ -362,7 +488,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#24</span>
+        <span class="num">#33</span>
         <span class="tag" style="background:#f97316">FEED UX</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">4.3</span>
@@ -376,7 +502,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#25</span>
+        <span class="num">#34</span>
         <span class="tag" style="background:#f97316">FEED UX</span>
         <span class="tag d">BASIC</span>
         <span class="qid">4.5</span>
@@ -390,7 +516,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#26</span>
+        <span class="num">#35</span>
         <span class="tag" style="background:#f97316">FEED UX</span>
         <span class="tag d">ADVANCED</span><span class="tag multi">MULTI</span>
         <span class="qid">4.6</span>
@@ -404,7 +530,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#27</span>
+        <span class="num">#36</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">6.1</span>
@@ -418,7 +544,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#28</span>
+        <span class="num">#37</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">6.2</span>
@@ -432,7 +558,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#29</span>
+        <span class="num">#38</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">6.3</span>
@@ -446,7 +572,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#30</span>
+        <span class="num">#39</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">6.4</span>
@@ -460,7 +586,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#31</span>
+        <span class="num">#40</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">BASIC</span>
         <span class="qid">6.5</span>
@@ -474,7 +600,7 @@ body{margin:0;background:var(--paper);background-image:radial-gradient(circle at
     </div>
     <div class="card">
       <div class="head">
-        <span class="num">#32</span>
+        <span class="num">#41</span>
         <span class="tag" style="background:#3fb950">SOCIAL</span>
         <span class="tag d">ADVANCED</span>
         <span class="qid">6.6</span>
