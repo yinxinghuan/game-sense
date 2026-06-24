@@ -59,16 +59,19 @@ body {
   border: 4px solid var(--ink); color: var(--ink);
   background: var(--white);
   padding: 12px 18px; border-radius: 0;
-  box-shadow: var(--sh-hard);
-  cursor: pointer; transition: transform 0.06s ease, box-shadow 0.06s ease;
+  box-shadow: 7px 7px 0 var(--ink);
+  cursor: pointer; transition: transform 0.05s ease, box-shadow 0.05s ease, filter 0.05s ease;
   min-height: 48px; text-transform: uppercase;
 }
-.btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+.btn:active { transform: translate(7px, 7px); box-shadow: 0 0 0 var(--ink); filter: brightness(0.88); }
 .btn.mag { background: var(--red); color: var(--white); }
 .btn.yel { background: var(--yellow); color: var(--ink); }
-.btn.big { font-size: 26px; padding: 14px 26px; }
-.btn.ghost { background: var(--paper); box-shadow: 2px 2px 0 var(--ink); }
-.btn:disabled { opacity: 0.5; }
+.btn.big { font-size: 26px; padding: 16px 26px; box-shadow: 8px 8px 0 var(--ink); }
+.btn.big:active { transform: translate(8px, 8px); }
+.btn.ghost { background: var(--paper); box-shadow: 4px 4px 0 var(--ink); }
+.btn.ghost:active { transform: translate(4px, 4px); }
+.btn:disabled { opacity: 0.45; box-shadow: 4px 4px 0 var(--ink); }
+.btn:disabled:active { transform: none; box-shadow: 4px 4px 0 var(--ink); filter: none; }
 
 input {
   font-family: var(--body); font-size: 16px; font-weight: 600;
@@ -126,10 +129,10 @@ input:focus { background: var(--paper-light); }
   color: var(--ink); background: var(--white);
   border: 4px solid var(--ink); border-radius: 0;
   padding: 14px 14px 14px 50px; cursor: pointer; min-height: 54px;
-  box-shadow: var(--sh-hard);
-  transition: transform 0.06s ease, box-shadow 0.06s ease, background 0.1s;
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.05s ease, box-shadow 0.05s ease, background 0.1s, filter 0.05s;
 }
-.opt:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+.opt:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--ink); filter: brightness(0.92); }
 .opt .key { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-family: var(--comic); font-size: 18px; color: var(--ink); background: var(--yellow); border: 3px solid var(--ink); width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; }
 .opt.sel { background: var(--paper-light); transform: rotate(-1deg); }
 .opt.sel .key { background: var(--blue); color: var(--white); }
