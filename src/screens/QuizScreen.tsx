@@ -127,7 +127,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       sfx.correct(nc);
       if (nc >= 2) sfx.combo(nc);
       haptic([10, 30, 10]);
-      confetti(x, y);
+      confetti();
       showBurst(hitShout() + (frac > 0.6 ? ' ⚡' : ''), 'hit');
       floatScore('+' + gained, '#3fb950');
       if (nc === 3 || nc === 5 || nc === 7 || nc === 10) {
