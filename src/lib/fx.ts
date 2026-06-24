@@ -1,5 +1,5 @@
 // Imperative juice helpers — append throwaway DOM nodes, animate, self-remove.
-const COLORS = ['#21f3ff', '#ff2bd6', '#ffe83b', '#28ff9a'];
+const COLORS = ['#e63946', '#ffd60a', '#2c6df4', '#3fb950', '#ff6b9d', '#f97316'];
 
 export function burst(x: number, y: number, count = 14, colors = COLORS) {
   for (let i = 0; i < count; i++) {

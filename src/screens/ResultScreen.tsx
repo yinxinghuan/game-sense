@@ -8,10 +8,10 @@ import { loadBoard, fireScoreBeat, BoardRow } from '../lib/leaderboard';
 import { openProfile } from '../lib/platform';
 
 function rank(pct: number): { key: any; color: string } {
-  if (pct >= 0.9) return { key: 'rankMaster', color: '#ffe83b' };
-  if (pct >= 0.75) return { key: 'rankPro', color: '#ff2bd6' };
-  if (pct >= 0.5) return { key: 'rankPlayer', color: '#21f3ff' };
-  return { key: 'rankNovice', color: '#28ff9a' };
+  if (pct >= 0.9) return { key: 'rankMaster', color: '#ffd60a' };
+  if (pct >= 0.75) return { key: 'rankPro', color: '#e63946' };
+  if (pct >= 0.5) return { key: 'rankPlayer', color: '#2c6df4' };
+  return { key: 'rankNovice', color: '#3fb950' };
 }
 
 export default function ResultScreen({
@@ -59,17 +59,17 @@ export default function ResultScreen({
   const secs = Math.round(result.timeMs / 1000);
   const share = () => {
     sfx.tap();
-    const text = `I scored ${result.score} on GAME SENSE — the arcade game-design quiz! Rank: ${t(r.key)}`;
+    const text = `I scored ${result.score} on GAME SENSE and got ranked "${t(r.key)}" 🎮 How's your game brain?`;
     if (navigator.share) navigator.share({ text }).catch(() => {});
     else navigator.clipboard?.writeText(text).catch(() => {});
   };
 
   return (
     <div className="result crt">
-      <div className="rankBadge arcade" style={{ color: r.color, border: `2px solid ${r.color}`, boxShadow: `0 0 24px ${r.color}66`, textShadow: `0 0 14px ${r.color}` }}>
+      <div className="rankBadge arcade" style={{ background: r.color, color: '#fff' }}>
         {t(r.key)}
       </div>
-      <div className="arcade" style={{ fontSize: 10, color: 'var(--dim)' }}>{t('finalScore')}</div>
+      <div className="arcade" style={{ fontSize: 20, color: 'var(--ink)' }}>{t('finalScore')}</div>
       <div className="bigScore">{shown}</div>
 
       <div className="statRow">

@@ -8,6 +8,7 @@ export interface Question {
   options: QOption[];
   correct: number[];
   explain: QOption;
+  img?: string; // optional comic illustration filename under public/q/
 }
 
 /** A question with its options pre-shuffled for display. */
