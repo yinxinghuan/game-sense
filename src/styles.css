@@ -122,7 +122,7 @@ input:focus { background: var(--paper-light); }
 /* the old big frame is gone — qcard is just a transparent layout wrapper now,
    each child carries its own comic frame and flies in independently */
 .qcard { background: transparent; border: none; box-shadow: none; padding: 0; margin-bottom: 9px; display: flex; flex-direction: column; }
-.qimg { width: 100%; aspect-ratio: 16/9; max-height: 27vh; object-fit: cover; border: 4px solid var(--ink); display: block; margin-bottom: 9px; background: var(--paper-dark); box-shadow: var(--sh-hard); align-self: center; max-width: 100%; animation: imgFly 0.5s cubic-bezier(.2,.8,.3,1.3) backwards; }
+.qimg { width: 100%; aspect-ratio: 3/2; max-height: 33vh; object-fit: cover; border: 4px solid var(--ink); display: block; margin-bottom: 9px; background: var(--paper-dark); box-shadow: var(--sh-hard); align-self: center; max-width: 100%; animation: imgFly 0.5s cubic-bezier(.2,.8,.3,1.3) backwards; }
 .qtag { font-family: var(--marker); font-size: 12px; color: var(--white); background: var(--ink); display: inline-block; align-self: flex-start; padding: 2px 9px; margin-bottom: 7px; transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--red); animation: tagDrop 0.4s 0.05s backwards; }
 .qtext { font-family: var(--body); font-weight: 900; font-size: 17px; line-height: 1.25; color: var(--ink); background: var(--white); border: 4px solid var(--ink); box-shadow: var(--sh-hard); padding: 9px 12px; transform: rotate(-0.6deg); animation: capPop 0.42s 0.12s cubic-bezier(.2,.9,.3,1.4) backwards; }
 .multiHint { font-family: var(--marker); font-size: 12px; color: var(--ink); background: var(--yellow); display: inline-block; align-self: flex-start; padding: 2px 8px; margin-top: 7px; border: 2px solid var(--ink); transform: rotate(1deg); }
@@ -132,7 +132,7 @@ input:focus { background: var(--paper-light); }
   position: relative; text-align: left; font-family: var(--body); font-size: 15px; font-weight: 700; line-height: 1.2;
   color: var(--ink); background: var(--white);
   border: 4px solid var(--ink); border-radius: 0;
-  padding: 10px 12px 10px 44px; cursor: pointer; min-height: 46px;
+  padding: 13px 12px 13px 46px; cursor: pointer; min-height: 54px;
   box-shadow: 5px 5px 0 var(--ink);
   transition: transform 0.05s ease, box-shadow 0.05s ease, background 0.1s, filter 0.05s, opacity 0.25s;
   animation: optFly 0.38s backwards;
@@ -169,6 +169,21 @@ input:focus { background: var(--paper-light); }
 .cburst .spark { position: absolute; font-size: clamp(20px, 5vw, 34px); color: var(--yellow); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; opacity: 0; animation: sparkFly 0.8s ease-out forwards; }
 .sp0 { --ex: -165px; --ey: -120px; } .sp1 { --ex: 175px; --ey: -95px; } .sp2 { --ex: -185px; --ey: 95px; }
 .sp3 { --ex: 165px; --ey: 135px; } .sp4 { --ex: -45px; --ey: -185px; } .sp5 { --ex: 65px; --ey: 180px; }
+.cburst .flash { position: absolute; width: 92vw; max-width: 460px; aspect-ratio: 1; border-radius: 50%; animation: flashPop 0.8s ease-out forwards; }
+@keyframes flashPop { 0% { opacity: 0; transform: scale(0.2); } 28% { opacity: 0.95; } 100% { opacity: 0; transform: scale(1.5); } }
+
+/* confetti pieces (success celebration) */
+.confetti { position: fixed; pointer-events: none; z-index: 125; }
+
+/* ================= SIZE-PICK widget ================= */
+.sizepickQ { background: var(--white); border: 5px solid var(--ink); box-shadow: var(--sh-loud); padding: 16px; animation: capPop 0.42s backwards; }
+.sizeRow { display: flex; align-items: flex-end; justify-content: center; gap: 20px; min-height: 104px; }
+.sizeCol { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.sizeTarget { flex: 0 0 auto; border-radius: 50%; background: var(--blue); color: #fff; border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 900; font-size: 20px; transition: transform 0.06s, box-shadow 0.06s; touch-action: manipulation; }
+.sizeTarget:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); }
+.sizeTarget.right { background: var(--green); border-color: #1f8a3b; }
+.sizeTarget.wrong { background: var(--red); }
+.sizeLabel { font-family: var(--comic); font-size: 16px; color: var(--ink); letter-spacing: 0.5px; }
 
 /* ================= DIAL widget ================= */
 .dialQ { background: var(--white); border: 5px solid var(--ink); box-shadow: var(--sh-loud); padding: 14px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; animation: capPop 0.42s backwards; }

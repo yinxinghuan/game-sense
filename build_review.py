@@ -45,6 +45,12 @@ for i, q in enumerate(Q):
             cls = "opt right" if m["correct"] else "opt"
             opts.append(f'<li class="{cls}"><b>{tick}</b>{html.escape(m["label"]["en"])}'
                         f'<span class="z">{html.escape(m["label"]["zh"])}</span></li>')
+    elif qtype == "sizepick":
+        c = q["pick"]
+        for i, s in enumerate(c["sizes"]):
+            cls = "opt right" if i == c["correct"] else "opt"
+            tick = "✓ " if i == c["correct"] else ""
+            opts.append(f'<li class="{cls}"><b>{tick}</b>{s}{c.get("unit","px")} tap target</li>')
     elif qtype in ("slider", "dial"):
         c = q[qtype]
         opts.append(f'<li class="opt right"><b>✓ </b>target {c["target"][0]}–{c["target"][1]}{c.get("unit","")} '

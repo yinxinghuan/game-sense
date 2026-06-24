@@ -182,41 +182,6 @@
     }
   },
   {
-    "id": "S1",
-    "cat": "ixd",
-    "diff": "B",
-    "type": "slider",
-    "q": {
-      "en": "Drag to size a button so it's comfy to tap with a thumb.",
-      "zh": "拖动，把按钮调到拇指点着舒服的大小。"
-    },
-    "img": "2.4.png",
-    "slider": {
-      "min": 16,
-      "max": 96,
-      "step": 2,
-      "start": 16,
-      "target": [
-        44,
-        72
-      ],
-      "unit": "px",
-      "low": {
-        "en": "tiny",
-        "zh": "太小"
-      },
-      "high": {
-        "en": "huge",
-        "zh": "巨大"
-      },
-      "preview": "size"
-    },
-    "explain": {
-      "en": "~44px is the comfy minimum tap target — big enough that thumbs don't miss.",
-      "zh": "约 44px 是舒适的最小点击目标——大到拇指不会按偏。"
-    }
-  },
-  {
     "id": "S2",
     "cat": "core",
     "diff": "A",
@@ -724,33 +689,25 @@
     "id": "2.4",
     "cat": "ixd",
     "diff": "B",
-    "multi": false,
     "q": {
-      "en": "On touch screens, a comfortable minimum tap-target size is roughly…",
-      "zh": "触屏上，舒适的最小点击目标尺寸大约是……"
+      "en": "Tap the smallest button that's still comfy for a thumb.",
+      "zh": "点那个仍能让拇指点着舒服的最小按钮。"
     },
-    "options": [
-      {
-        "en": "44 px (~iOS HIG)",
-        "zh": "44 像素（约 iOS 规范）"
-      },
-      {
-        "en": "8 px",
-        "zh": "8 像素"
-      },
-      {
-        "en": "16 px",
-        "zh": "16 像素"
-      }
-    ],
-    "correct": [
-      0
-    ],
     "explain": {
-      "en": "~44pt/48dp is the common floor so fingers don't mis-tap.",
-      "zh": "约 44pt/48dp 是常见下限，避免手指误触。"
+      "en": "~44px is the comfy minimum tap target — big enough that thumbs don't miss.",
+      "zh": "约 44px 是舒适的最小点击目标——大到拇指不会按偏。"
     },
-    "img": "2.4.png"
+    "img": "2.4.png",
+    "type": "sizepick",
+    "pick": {
+      "sizes": [
+        16,
+        44,
+        80
+      ],
+      "correct": 1,
+      "unit": "px"
+    }
   },
   {
     "id": "2.5",

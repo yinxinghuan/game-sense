@@ -1,6 +1,6 @@
 export interface QOption { en: string; zh: string; }
 
-export type QType = 'mcq' | 'slider' | 'drag' | 'dial' | 'lever';
+export type QType = 'mcq' | 'slider' | 'drag' | 'dial' | 'lever' | 'sizepick';
 
 /** Slider: drag a value into the correct range. Optional live preview reacts as you slide. */
 export interface SliderConfig {
@@ -38,6 +38,9 @@ export interface DialConfig {
 export interface LeverMachine { label: QOption; correct: boolean; }
 export interface LeverConfig { machines: LeverMachine[]; }
 
+/** Size-pick: tap the comfortably-sized target (buttons drawn at real px sizes). */
+export interface PickConfig { sizes: number[]; correct: number; unit?: string; }
+
 export interface Question {
   id: string;
   cat: 'core' | 'ixd' | 'feel' | 'feed' | 'eng' | 'social';
@@ -51,6 +54,7 @@ export interface Question {
   drag?: DragConfig;     // drag only
   dial?: DialConfig;     // dial only
   lever?: LeverConfig;   // lever only
+  pick?: PickConfig;     // sizepick only
   explain: QOption;
   img?: string;
 }

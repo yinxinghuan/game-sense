@@ -36,6 +36,7 @@ const S: Dict = {
   dialHint: { en: 'Twist the knob, then lock', zh: '旋动旋钮，再确认' },
   leverHint: { en: 'Pull down the right machine', zh: '把对的那台往下拉' },
   pull: { en: 'PULL', zh: '下拉' },
+  pickHint: { en: 'Tap the comfortably-sized one', zh: '点那个大小刚舒服的' },
   next: { en: 'NEXT ▸', zh: '下一题 ▸' },
   finish: { en: 'HOW DID I DO? ▸', zh: '我考得咋样 ▸' },
   finalScore: { en: 'YOUR SCORE', zh: '你的得分' },

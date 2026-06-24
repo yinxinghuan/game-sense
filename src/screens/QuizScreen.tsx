@@ -3,12 +3,13 @@ import questionsData from '../data/questions.json';
 import { Question, ShuffledQuestion, QuizResult } from '../types';
 import { t, loc } from '../i18n';
 import { sfx, haptic } from '../lib/audio';
-import { burst, floatScore } from '../lib/fx';
+import { confetti, floatScore } from '../lib/fx';
 import { hitShout, missShout, streakShout } from '../lib/shouts';
 import SliderQ from '../widgets/SliderQ';
 import DragQ from '../widgets/DragQ';
 import DialQ from '../widgets/DialQ';
 import LeverQ from '../widgets/LeverQ';
+import SizePickQ from '../widgets/SizePickQ';
 import Boundary from '../widgets/Boundary';
 
 const NUM = 14;
@@ -44,19 +45,28 @@ function buildRound(): ShuffledQuestion[] {
   }));
 }
 
-interface Burst { word: string; front: string; mid: string; ray: string; rot: number; shape: number; id: number; }
+interface Burst { word: string; front: string; mid: string; ray: string; rot: number; shape: number; star: boolean; id: number; }
 
 function ComicBurst({ b }: { b: Burst | null }) {
   if (!b) return null;
   return (
     <div className="cburst" key={b.id} style={{ ['--rot' as any]: b.rot + 'deg' }}>
       <div className="cburstInner">
-        <div className="rays" style={{ background: `repeating-conic-gradient(from 0deg, ${b.ray} 0deg 7deg, transparent 7deg 15deg)` }} />
-        <div className={'star back s' + b.shape} />
-        <div className={'star mid s' + b.shape} style={{ background: b.mid }} />
-        <div className={'star front s' + b.shape} style={{ background: b.front }} />
-        <div className="word">{b.word}</div>
-        {[0, 1, 2, 3, 4, 5].map((i) => <span key={i} className={'spark sp' + i}>★</span>)}
+        {b.star ? (
+          <>
+            <div className="rays" style={{ background: `repeating-conic-gradient(from 0deg, ${b.ray} 0deg 7deg, transparent 7deg 15deg)` }} />
+            <div className={'star back s' + b.shape} />
+            <div className={'star mid s' + b.shape} style={{ background: b.mid }} />
+            <div className={'star front s' + b.shape} style={{ background: b.front }} />
+            <div className="word">{b.word}</div>
+            {[0, 1, 2, 3, 4, 5].map((i) => <span key={i} className={'spark sp' + i}>★</span>)}
+          </>
+        ) : (
+          <>
+            <div className="flash" style={{ background: `radial-gradient(circle, ${b.front} 0%, ${b.front}88 30%, transparent 66%)` }} />
+            <div className="word">{b.word}</div>
+          </>
+        )}
       </div>
     </div>
   );
@@ -91,7 +101,8 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
     cbId.current += 1;
     const id = cbId.current;
     const p = PALETTE[kind];
-    setCb({ word, ...p, rot: Math.round(Math.random() * 36 - 18), shape: Math.floor(Math.random() * 3), id });
+    // miss keeps the spiky star; success (hit/streak) uses a soft flash so the confetti is the star
+    setCb({ word, ...p, rot: Math.round(Math.random() * 36 - 18), shape: Math.floor(Math.random() * 3), star: kind === 'miss', id });
     setTimeout(() => setCb((c) => (c && c.id === id ? null : c)), 820);
   };
 
@@ -116,7 +127,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       sfx.correct(nc);
       if (nc >= 2) sfx.combo(nc);
       haptic([10, 30, 10]);
-      burst(x, y, 18);
+      confetti(x, y);
       showBurst(hitShout() + (frac > 0.6 ? ' ⚡' : ''), 'hit');
       floatScore('+' + gained, '#3fb950');
       if (nc === 3 || nc === 5 || nc === 7 || nc === 10) {
@@ -191,6 +202,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
     : q.type === 'drag' ? t('dragHint')
     : q.type === 'dial' ? t('dialHint')
     : q.type === 'lever' ? t('leverHint')
+    : q.type === 'sizepick' ? t('pickHint')
     : q.multi ? t('multiHint') : '';
 
   return (
@@ -238,6 +250,7 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
           {q.type === 'drag' && <DragQ q={q} answered={answered} onResolve={resolve} />}
           {q.type === 'dial' && <DialQ q={q} answered={answered} onResolve={resolve} />}
           {q.type === 'lever' && <LeverQ q={q} answered={answered} onResolve={resolve} />}
+          {q.type === 'sizepick' && <SizePickQ q={q} answered={answered} onResolve={resolve} />}
 
           {answered && (
             <div className="explain">
