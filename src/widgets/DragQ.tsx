@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Question } from '../types';
 import { t, loc } from '../i18n';
 import { sfx, haptic } from '../lib/audio';
@@ -15,13 +15,11 @@ export default function DragQ({
   const cfg = q.drag!;
   const [place, setPlace] = useState<(Bucket | null)[]>(() => cfg.items.map(() => null));
   const [drag, setDrag] = useState<{ idx: number; x: number; y: number } | null>(null);
-  const dragInfo = useRef<{ idx: number } | null>(null);
 
   const startDrag = (idx: number, e: React.PointerEvent) => {
     if (answered) return;
     sfx.tap(); haptic(8);
     try { (e.currentTarget as Element).setPointerCapture?.(e.pointerId); } catch { /* */ }
-    dragInfo.current = { idx };
     setDrag({ idx, x: e.clientX, y: e.clientY });
     const mv = (ev: PointerEvent) => setDrag((d) => (d ? { ...d, x: ev.clientX, y: ev.clientY } : d));
     const cleanup = () => {
@@ -33,14 +31,13 @@ export default function DragQ({
       cleanup();
       const el = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
       const b = el?.closest('[data-bucket]')?.getAttribute('data-bucket') as Bucket | undefined;
-      if (b && dragInfo.current) {
+      if (b) {
         sfx.combo(2); haptic([8, 20]);
-        setPlace((p) => p.map((v, i) => (i === dragInfo.current!.idx ? b : v)));
+        setPlace((p) => p.map((v, i) => (i === idx ? b : v))); // idx captured from closure — stable
       }
-      dragInfo.current = null;
       setDrag(null);
     };
-    const cancel = () => { cleanup(); dragInfo.current = null; setDrag(null); };
+    const cancel = () => { cleanup(); setDrag(null); };
     window.addEventListener('pointermove', mv);
     window.addEventListener('pointerup', up);
     window.addEventListener('pointercancel', cancel);
