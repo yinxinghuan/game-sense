@@ -122,7 +122,7 @@ input:focus { background: var(--paper-light); }
 /* the old big frame is gone — qcard is just a transparent layout wrapper now,
    each child carries its own comic frame and flies in independently */
 .qcard { background: transparent; border: none; box-shadow: none; padding: 0; margin-bottom: 9px; display: flex; flex-direction: column; }
-.qimg { width: 100%; aspect-ratio: 16/7; max-height: 28vh; object-fit: cover; border: 4px solid var(--ink); display: block; margin-bottom: 9px; background: var(--paper-dark); box-shadow: var(--sh-hard); align-self: center; max-width: 100%; animation: imgFly 0.5s cubic-bezier(.2,.8,.3,1.3) backwards; }
+.qimg { width: 100%; aspect-ratio: 16/9; max-height: 27vh; object-fit: cover; border: 4px solid var(--ink); display: block; margin-bottom: 9px; background: var(--paper-dark); box-shadow: var(--sh-hard); align-self: center; max-width: 100%; animation: imgFly 0.5s cubic-bezier(.2,.8,.3,1.3) backwards; }
 .qtag { font-family: var(--marker); font-size: 12px; color: var(--white); background: var(--ink); display: inline-block; align-self: flex-start; padding: 2px 9px; margin-bottom: 7px; transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--red); animation: tagDrop 0.4s 0.05s backwards; }
 .qtext { font-family: var(--body); font-weight: 900; font-size: 17px; line-height: 1.25; color: var(--ink); background: var(--white); border: 4px solid var(--ink); box-shadow: var(--sh-hard); padding: 9px 12px; transform: rotate(-0.6deg); animation: capPop 0.42s 0.12s cubic-bezier(.2,.9,.3,1.4) backwards; }
 .multiHint { font-family: var(--marker); font-size: 12px; color: var(--ink); background: var(--yellow); display: inline-block; align-self: flex-start; padding: 2px 8px; margin-top: 7px; border: 2px solid var(--ink); transform: rotate(1deg); }
@@ -186,16 +186,19 @@ input:focus { background: var(--paper-light); }
 /* ================= LEVER widget ================= */
 .leverQ { animation: capPop 0.42s backwards; }
 .machines { display: grid; gap: 10px; }
-.machine { position: relative; background: var(--white); border: 4px solid var(--ink); box-shadow: var(--sh-hard); padding: 10px 6px 14px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.machine { position: relative; background: var(--white); border: 4px solid var(--ink); box-shadow: var(--sh-hard); padding: 10px 6px 12px; display: flex; flex-direction: column; align-items: center; gap: 7px; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; transition: transform 0.06s; }
+.machine.active { transform: translateY(2px); background: var(--paper-light); cursor: grabbing; }
 .machine.right { background: var(--green); }
 .machine.wrong { background: var(--red); }
+.pullHint { font-family: var(--comic); font-size: 13px; color: var(--red); letter-spacing: 0.5px; animation: pullBob 0.9s ease-in-out infinite; }
+@keyframes pullBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 .mlabel { font-family: var(--body); font-weight: 800; font-size: 12px; text-align: center; line-height: 1.2; min-height: 30px; display: flex; align-items: center; }
 .machine.wrong .mlabel { color: #fff; }
 .reels { display: flex; gap: 3px; background: var(--ink); padding: 4px; border-radius: 4px; overflow: hidden; }
 .reel { width: 24px; height: 30px; background: var(--paper-light); border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-size: 16px; }
 .reel.spin { animation: reelSpin 0.4s linear; }
 .leverTrack { position: relative; width: 14px; height: 72px; background: var(--ink); border-radius: 8px; margin-top: 2px; }
-.leverArm { position: absolute; left: 50%; top: -2px; margin-left: -24px; width: 48px; display: flex; justify-content: center; touch-action: none; cursor: grab; }
+.leverArm { position: absolute; left: 50%; top: -2px; margin-left: -24px; width: 48px; display: flex; justify-content: center; pointer-events: none; transition: transform 0.05s; }
 .leverBall { width: 30px; height: 30px; border-radius: 50%; background: var(--red); border: 4px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); }
 .mflag { position: absolute; top: -12px; right: -10px; width: 30px; height: 30px; border-radius: 50%; background: var(--white); border: 3px solid var(--ink); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #1f8a3b; }
 

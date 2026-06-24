@@ -389,10 +389,6 @@
       {
         "en": "The final boss fight",
         "zh": "最终 Boss 战"
-      },
-      {
-        "en": "The credits screen",
-        "zh": "结算名单画面"
       }
     ],
     "correct": [
@@ -425,10 +421,6 @@
       {
         "en": "After completing a settings step",
         "zh": "做完设置步骤之后"
-      },
-      {
-        "en": "After a mandatory account signup",
-        "zh": "强制注册账号之后"
       }
     ],
     "correct": [
@@ -461,10 +453,6 @@
       {
         "en": "No reward at all",
         "zh": "完全不给奖励"
-      },
-      {
-        "en": "One reward only at the very end",
-        "zh": "只在最末尾给一次奖励"
       }
     ],
     "correct": [
@@ -497,10 +485,6 @@
       {
         "en": "A long credits sequence",
         "zh": "过长的结算名单"
-      },
-      {
-        "en": "Small file size",
-        "zh": "文件体积太小"
       }
     ],
     "correct": [
@@ -533,10 +517,6 @@
       {
         "en": "The number of levels",
         "zh": "关卡数量"
-      },
-      {
-        "en": "The size of the dev team",
-        "zh": "团队规模"
       }
     ],
     "correct": [
@@ -569,10 +549,6 @@
       {
         "en": "Far below the player's skill",
         "zh": "远低于玩家技能"
-      },
-      {
-        "en": "Random and unpredictable",
-        "zh": "完全随机不可预测"
       }
     ],
     "correct": [
@@ -605,10 +581,6 @@
       {
         "en": "Make them watch a 2-minute video",
         "zh": "让他们看 2 分钟视频"
-      },
-      {
-        "en": "Hide it and hope they discover it",
-        "zh": "藏起来，指望他们自己发现"
       }
     ],
     "correct": [
@@ -641,10 +613,6 @@
       {
         "en": "Only shown in a menu",
         "zh": "只在菜单里显示"
-      },
-      {
-        "en": "Decided by the developer afterwards",
-        "zh": "由开发者事后判定"
       }
     ],
     "correct": [
@@ -677,10 +645,6 @@
       {
         "en": "A loading animation",
         "zh": "加载动画"
-      },
-      {
-        "en": "A type of font",
-        "zh": "一种字体"
       }
     ],
     "correct": [
@@ -713,10 +677,6 @@
       {
         "en": "The same color as the background",
         "zh": "跟背景同色"
-      },
-      {
-        "en": "Hidden until hovered",
-        "zh": "悬停前隐藏"
       }
     ],
     "correct": [
@@ -749,10 +709,6 @@
       {
         "en": "Always improves usability",
         "zh": "总能提升可用性"
-      },
-      {
-        "en": "Reduces the time to decide",
-        "zh": "缩短做决定的时间"
       }
     ],
     "correct": [
@@ -785,10 +741,6 @@
       {
         "en": "16 px",
         "zh": "16 像素"
-      },
-      {
-        "en": "200 px",
-        "zh": "200 像素"
       }
     ],
     "correct": [
@@ -821,10 +773,6 @@
       {
         "en": "~3 seconds",
         "zh": "约 3 秒"
-      },
-      {
-        "en": "~10 seconds",
-        "zh": "约 10 秒"
       }
     ],
     "correct": [
@@ -857,10 +805,6 @@
       {
         "en": "Never read any text",
         "zh": "从不读任何文字"
-      },
-      {
-        "en": "Want maximum customization",
-        "zh": "想要最大程度的自定义"
       }
     ],
     "correct": [
@@ -893,10 +837,6 @@
       {
         "en": "Show a raw error code only",
         "zh": "只显示一串原始错误码"
-      },
-      {
-        "en": "Disappear instantly",
-        "zh": "瞬间消失"
       }
     ],
     "correct": [
@@ -929,10 +869,6 @@
       {
         "en": "Muting the sound",
         "zh": "静音"
-      },
-      {
-        "en": "Reducing the frame rate",
-        "zh": "降低帧率"
       }
     ],
     "correct": [
@@ -965,10 +901,6 @@
       {
         "en": "Reduce file size",
         "zh": "减小文件体积"
-      },
-      {
-        "en": "Translate text",
-        "zh": "翻译文本"
       }
     ],
     "correct": [
@@ -1001,10 +933,6 @@
       {
         "en": "Encrypting the assets",
         "zh": "加密资源"
-      },
-      {
-        "en": "Adding more menus",
-        "zh": "增加菜单"
       }
     ],
     "correct": [
@@ -1037,10 +965,6 @@
       {
         "en": "Only at the end of the session",
         "zh": "只在整局结束时"
-      },
-      {
-        "en": "Never, to keep it clean",
-        "zh": "永远不给，保持干净"
       }
     ],
     "correct": [
@@ -1073,10 +997,6 @@
       {
         "en": "Hide a bug",
         "zh": "掩盖 bug"
-      },
-      {
-        "en": "Skip a frame to run faster",
-        "zh": "跳帧以提速"
       }
     ],
     "correct": [
@@ -1109,10 +1029,6 @@
       {
         "en": "Replace the core mechanic",
         "zh": "取代核心机制"
-      },
-      {
-        "en": "Slow the game down intentionally",
-        "zh": "故意拖慢游戏"
       }
     ],
     "correct": [
@@ -1145,10 +1061,6 @@
       {
         "en": "Will replay daily without prompting",
         "zh": "会每天主动回访"
-      },
-      {
-        "en": "Wants to configure settings before playing",
-        "zh": "想先配置设置再玩"
       }
     ],
     "correct": [
@@ -1181,10 +1093,6 @@
       {
         "en": "It requires a video tutorial",
         "zh": "需要看视频教程"
-      },
-      {
-        "en": "It only works for returning users",
-        "zh": "只对回访用户有效"
       }
     ],
     "correct": [
@@ -1217,10 +1125,6 @@
       {
         "en": "Requiring an account to start",
         "zh": "开始前要求注册"
-      },
-      {
-        "en": "Front-loading a long tutorial",
-        "zh": "前置一段长教程"
       }
     ],
     "correct": [
@@ -1253,10 +1157,6 @@
       {
         "en": "The very top edge",
         "zh": "最顶边"
-      },
-      {
-        "en": "Off-screen",
-        "zh": "屏幕之外"
       }
     ],
     "correct": [
@@ -1331,10 +1231,6 @@
       {
         "en": "The feed should scroll automatically",
         "zh": "信息流应自动滚动"
-      },
-      {
-        "en": "Authors should post more often",
-        "zh": "作者应更频繁地发帖"
       }
     ],
     "correct": [
@@ -1367,10 +1263,6 @@
       {
         "en": "Repeat every minute regardless of activity",
         "zh": "不论是否有活动每分钟重复"
-      },
-      {
-        "en": "Come from fabricated fake users",
-        "zh": "来自编造的假用户"
       }
     ],
     "correct": [
@@ -1403,10 +1295,6 @@
       {
         "en": "An empty screen",
         "zh": "一个空白屏"
-      },
-      {
-        "en": "Copying another app's user list",
-        "zh": "抄另一个 app 的用户列表"
       }
     ],
     "correct": [
@@ -1439,10 +1327,6 @@
       {
         "en": "A bigger app icon",
         "zh": "更大的应用图标"
-      },
-      {
-        "en": "Longer loading screens",
-        "zh": "更长的加载页"
       }
     ],
     "correct": [
@@ -1475,10 +1359,6 @@
       {
         "en": "Hides the score",
         "zh": "隐藏分数"
-      },
-      {
-        "en": "Deletes the leaderboard",
-        "zh": "删除排行榜"
       }
     ],
     "correct": [
@@ -1511,10 +1391,6 @@
       {
         "en": "Virality only matters for paid ads",
         "zh": "病毒性只对付费广告有意义"
-      },
-      {
-        "en": "Retention only matters on launch day",
-        "zh": "留存只在上线当天有意义"
       }
     ],
     "correct": [

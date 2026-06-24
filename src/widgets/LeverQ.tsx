@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import { Question } from '../types';
-import { loc } from '../i18n';
+import { loc, t } from '../i18n';
 import { sfx, haptic } from '../lib/audio';
 
-const MAX_PULL = 64;
-const THRESH = 42;
+const MAX_PULL = 60;
+const THRESH = 34;
 
 export default function LeverQ({
   q, answered, onResolve,
@@ -27,7 +27,7 @@ export default function LeverQ({
     const mv = (ev: PointerEvent) => {
       const d = Math.max(0, Math.min(MAX_PULL, ev.clientY - startY.current));
       setDy({ idx, y: d });
-      haptic(3);
+      if (d > 4) haptic(3);
     };
     const cleanup = () => {
       window.removeEventListener('pointermove', mv);
@@ -61,8 +61,11 @@ export default function LeverQ({
           const spinning = pulled === i;
           const showRight = answered && m.correct;
           const showWrongPick = answered && pulled === i && !m.correct;
+          const active = dy?.idx === i || pulled === i;
           return (
-            <div key={i} className={'machine' + (showRight ? ' right' : '') + (showWrongPick ? ' wrong' : '')}>
+            <div key={i}
+                 className={'machine' + (showRight ? ' right' : '') + (showWrongPick ? ' wrong' : '') + (active ? ' active' : '')}
+                 onPointerDown={(e) => onDown(i, e)}>
               <div className="mlabel">{loc(m.label)}</div>
               <div className="reels">
                 <span className={'reel' + (spinning ? ' spin' : '')}>{answered ? (m.correct ? '💰' : '💀') : '❓'}</span>
@@ -70,11 +73,11 @@ export default function LeverQ({
                 <span className={'reel' + (spinning ? ' spin' : '')}>{answered ? (m.correct ? '💰' : '💀') : '❓'}</span>
               </div>
               <div className="leverTrack">
-                <div className="leverArm" style={{ transform: `translateY(${handleY(i)}px)` }}
-                     onPointerDown={(e) => onDown(i, e)}>
+                <div className="leverArm" style={{ transform: `translateY(${handleY(i)}px)` }}>
                   <span className="leverBall" />
                 </div>
               </div>
+              {!answered && <div className="pullHint">{t('pull')} ↓</div>}
               {showRight && <span className="mflag">✓</span>}
             </div>
           );
