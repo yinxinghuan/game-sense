@@ -36,16 +36,19 @@ export default function SliderQ({
 
   const onDown = (e: React.PointerEvent) => {
     if (answered) return;
+    try { (e.currentTarget as Element).setPointerCapture?.(e.pointerId); } catch { /* */ }
     setGrabbed(true);
     setFromX(e.clientX);
     const mv = (ev: PointerEvent) => setFromX(ev.clientX);
-    const up = () => {
+    const end = () => {
       setGrabbed(false);
       window.removeEventListener('pointermove', mv);
-      window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointerup', end);
+      window.removeEventListener('pointercancel', end);
     };
     window.addEventListener('pointermove', mv);
-    window.addEventListener('pointerup', up);
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
   };
 
   const frac = (val - cfg.min) / (cfg.max - cfg.min);

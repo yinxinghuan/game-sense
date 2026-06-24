@@ -21,6 +21,7 @@ export default function LeverQ({
   const onDown = (idx: number, e: React.PointerEvent) => {
     if (answered || pulled !== null) return;
     sfx.tap();
+    try { (e.currentTarget as Element).setPointerCapture?.(e.pointerId); } catch { /* */ }
     startY.current = e.clientY;
     setDy({ idx, y: 0 });
     const mv = (ev: PointerEvent) => {
@@ -28,9 +29,13 @@ export default function LeverQ({
       setDy({ idx, y: d });
       haptic(3);
     };
-    const up = (ev: PointerEvent) => {
+    const cleanup = () => {
       window.removeEventListener('pointermove', mv);
       window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointercancel', cancel);
+    };
+    const up = (ev: PointerEvent) => {
+      cleanup();
       const d = Math.max(0, Math.min(MAX_PULL, ev.clientY - startY.current));
       if (d >= THRESH) {
         setPulled(idx);
@@ -41,8 +46,10 @@ export default function LeverQ({
         setDy(null);
       }
     };
+    const cancel = () => { cleanup(); setDy(null); };
     window.addEventListener('pointermove', mv);
     window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', cancel);
   };
 
   const handleY = (idx: number) => (dy && dy.idx === idx ? dy.y : pulled === idx ? MAX_PULL : 0);

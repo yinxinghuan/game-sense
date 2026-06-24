@@ -39,16 +39,19 @@ export default function DialQ({
 
   const onDown = (e: React.PointerEvent) => {
     if (answered) return;
+    try { (e.currentTarget as Element).setPointerCapture?.(e.pointerId); } catch { /* */ }
     setGrab(true);
     setFromPointer(e.clientX, e.clientY);
     const mv = (ev: PointerEvent) => setFromPointer(ev.clientX, ev.clientY);
-    const up = () => {
+    const end = () => {
       setGrab(false);
       window.removeEventListener('pointermove', mv);
-      window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointerup', end);
+      window.removeEventListener('pointercancel', end);
     };
     window.addEventListener('pointermove', mv);
-    window.addEventListener('pointerup', up);
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
   };
 
   const frac = (val - cfg.min) / (cfg.max - cfg.min);

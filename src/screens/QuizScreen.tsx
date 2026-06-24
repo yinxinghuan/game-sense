@@ -4,11 +4,12 @@ import { Question, ShuffledQuestion, QuizResult } from '../types';
 import { t, loc } from '../i18n';
 import { sfx, haptic } from '../lib/audio';
 import { burst, floatScore } from '../lib/fx';
-import { hitShout, missShout, streakShout, faceRight, faceWrong } from '../lib/shouts';
+import { hitShout, missShout, streakShout } from '../lib/shouts';
 import SliderQ from '../widgets/SliderQ';
 import DragQ from '../widgets/DragQ';
 import DialQ from '../widgets/DialQ';
 import LeverQ from '../widgets/LeverQ';
+import Boundary from '../widgets/Boundary';
 
 const NUM = 14;
 const Q_TIME = 18000;
@@ -73,7 +74,6 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
   const [picked, setPicked] = useState<number[]>([]);
   const [answered, setAnswered] = useState(false);
   const [wasRight, setWasRight] = useState(false);
-  const [face, setFace] = useState('🤔');
   const [cb, setCb] = useState<Burst | null>(null);
   const cbId = useRef(0);
   const qStartRef = useRef(Date.now());
@@ -113,7 +113,6 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       const nc = combo + 1;
       setCombo(nc);
       maxComboRef.current = Math.max(maxComboRef.current, nc);
-      setFace(faceRight());
       sfx.correct(nc);
       if (nc >= 2) sfx.combo(nc);
       haptic([10, 30, 10]);
@@ -128,7 +127,6 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
       comboRef.current?.classList.add('pop');
     } else {
       setCombo(0);
-      setFace(faceWrong());
       sfx.wrong();
       haptic([40, 30, 40]);
       showBurst(missShout(), 'miss');
@@ -176,7 +174,6 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
     setIdx((i) => i + 1);
     setPicked([]);
     setAnswered(false);
-    setFace('🤔');
     qStartRef.current = Date.now();
   };
 
@@ -206,50 +203,49 @@ export default function QuizScreen({ name, onFinish }: { name: string; onFinish:
         <span className="score">{score}</span>
       </div>
 
-      <div className="mascotRow">
-        <span className={'mascot ' + (answered ? 'react' : '')} key={face + idx}>{face}</span>
-        <div className="combo" ref={comboRef}>
-          {combo >= 2 && <span>{t('combo')} <b>x{combo}</b> 🔥</span>}
-        </div>
-      </div>
+      {combo >= 2 && (
+        <div className="comboChip" ref={comboRef}>{t('combo')} <b>x{combo}</b> 🔥</div>
+      )}
 
       <div className="qbody">
-        <div className="qcard" key={q.id}>
-          {q.img && <img className="qimg" src={IMG_BASE + q.img} alt="" draggable={false} />}
-          <div className="qtag">{CAT_LABEL[q.cat]}</div>
-          <div className="qtext">{loc(q.q)}</div>
-          {hint && <div className="multiHint">✦ {hint}</div>}
-        </div>
-
-        {isMcq(q) && (
-          <div className="opts">
-            {q.shuffled.map((s, i) => (
-              <button
-                key={i}
-                className={optClass(i)}
-                style={{ animationDelay: `${i * 0.06}s`, ['--fx' as any]: i % 2 ? '70px' : '-70px', ['--fr' as any]: i % 2 ? '4deg' : '-4deg' }}
-                onClick={(e) => (q.multi ? toggle(i) : judge([i], { x: e.clientX, y: e.clientY }))}
-              >
-                <span className="key">{KEYS[i]}</span>
-                {loc(s.opt)}
-                {answered && s.isCorrect && <span className="mark">✓</span>}
-                {answered && isSelected(i) && !s.isCorrect && <span className="mark">✕</span>}
-              </button>
-            ))}
+        <Boundary key={q.id} onSkip={next}>
+          <div className="qcard">
+            {q.img && <img className="qimg" src={IMG_BASE + q.img} alt="" draggable={false} />}
+            <div className="qtag">{CAT_LABEL[q.cat]}</div>
+            <div className="qtext">{loc(q.q)}</div>
+            {hint && <div className="multiHint">✦ {hint}</div>}
           </div>
-        )}
 
-        {q.type === 'slider' && <SliderQ q={q} answered={answered} onResolve={resolve} />}
-        {q.type === 'drag' && <DragQ q={q} answered={answered} onResolve={resolve} />}
-        {q.type === 'dial' && <DialQ q={q} answered={answered} onResolve={resolve} />}
-        {q.type === 'lever' && <LeverQ q={q} answered={answered} onResolve={resolve} />}
+          {isMcq(q) && (
+            <div className="opts">
+              {q.shuffled.map((s, i) => (
+                <button
+                  key={i}
+                  className={optClass(i)}
+                  style={{ animationDelay: `${i * 0.05}s`, ['--fx' as any]: i % 2 ? '70px' : '-70px', ['--fr' as any]: i % 2 ? '4deg' : '-4deg' }}
+                  onClick={(e) => (q.multi ? toggle(i) : judge([i], { x: e.clientX, y: e.clientY }))}
+                >
+                  <span className="key">{KEYS[i]}</span>
+                  {loc(s.opt)}
+                  {answered && s.isCorrect && <span className="mark">✓</span>}
+                  {answered && isSelected(i) && !s.isCorrect && <span className="mark">✕</span>}
+                </button>
+              ))}
+            </div>
+          )}
 
-        {answered && (
-          <div className="explain">
-            <b className={wasRight ? 'neon-cyan' : 'neon-mag'}>{wasRight ? t('correct') : t('wrong')}</b>
-            {loc(q.explain)}
-          </div>
-        )}
+          {q.type === 'slider' && <SliderQ q={q} answered={answered} onResolve={resolve} />}
+          {q.type === 'drag' && <DragQ q={q} answered={answered} onResolve={resolve} />}
+          {q.type === 'dial' && <DialQ q={q} answered={answered} onResolve={resolve} />}
+          {q.type === 'lever' && <LeverQ q={q} answered={answered} onResolve={resolve} />}
+
+          {answered && (
+            <div className="explain">
+              <b className={wasRight ? 'neon-cyan' : 'neon-mag'}>{wasRight ? t('correct') : t('wrong')}</b>
+              {loc(q.explain)}
+            </div>
+          )}
+        </Boundary>
       </div>
 
       <div className="qfoot">

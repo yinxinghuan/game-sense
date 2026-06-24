@@ -20,12 +20,17 @@ export default function DragQ({
   const startDrag = (idx: number, e: React.PointerEvent) => {
     if (answered) return;
     sfx.tap(); haptic(8);
+    try { (e.currentTarget as Element).setPointerCapture?.(e.pointerId); } catch { /* */ }
     dragInfo.current = { idx };
     setDrag({ idx, x: e.clientX, y: e.clientY });
     const mv = (ev: PointerEvent) => setDrag((d) => (d ? { ...d, x: ev.clientX, y: ev.clientY } : d));
-    const up = (ev: PointerEvent) => {
+    const cleanup = () => {
       window.removeEventListener('pointermove', mv);
       window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointercancel', cancel);
+    };
+    const up = (ev: PointerEvent) => {
+      cleanup();
       const el = document.elementFromPoint(ev.clientX, ev.clientY) as HTMLElement | null;
       const b = el?.closest('[data-bucket]')?.getAttribute('data-bucket') as Bucket | undefined;
       if (b && dragInfo.current) {
@@ -35,8 +40,10 @@ export default function DragQ({
       dragInfo.current = null;
       setDrag(null);
     };
+    const cancel = () => { cleanup(); dragInfo.current = null; setDrag(null); };
     window.addEventListener('pointermove', mv);
     window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', cancel);
   };
 
   const placedCount = place.filter((p) => p !== null).length;
