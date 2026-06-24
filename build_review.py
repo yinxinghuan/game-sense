@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Build a self-contained review.html contact sheet of the whole question bank.
-Embeds existing question images as base64 so the file is portable/shareable.
-Re-run after generating more images to refresh."""
-import json, base64, html
+"""Build a lightweight review.html contact sheet of the whole question bank.
+Output goes to public/review.html so it deploys with the game (relative q/ image
+paths) and also opens locally (public/review.html sits beside public/q/).
+URL: https://yinxinghuan.github.io/game-sense/review.html"""
+import json, html
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -17,8 +18,7 @@ CATCOLOR = {"core": "#2c6df4", "ixd": "#9b59b6", "feel": "#e63946",
 def img_tag(qid, img):
     p = IMGDIR / img if img else None
     if p and p.exists():
-        b64 = base64.b64encode(p.read_bytes()).decode()
-        return f'<img class="qi" src="data:image/png;base64,{b64}" alt="">'
+        return f'<img class="qi" src="q/{html.escape(img)}" alt="" loading="lazy">'
     return '<div class="qi noimg">ART TO GENERATE</div>'
 
 cards = []
@@ -93,6 +93,10 @@ body{{margin:0;background:var(--paper);background-image:radial-gradient(circle a
 <div class="grid">{"".join(cards)}</div>
 </body></html>'''
 
-out = ROOT / "review.html"
+out = ROOT / "public" / "review.html"
 out.write_text(doc, encoding="utf-8")
+# remove old heavy base64 version if present
+old = ROOT / "review.html"
+if old.exists():
+    old.unlink()
 print(f"wrote {out}  ({len(Q)} questions, {have} with art)")

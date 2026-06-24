@@ -1,0 +1,489 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Sense — Question Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4ecd8;--ink:#111;--white:#fff;--green:#3fb950;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);background-image:radial-gradient(circle at .5px .5px,rgba(17,17,17,.16) 1px,transparent 1.3px);background-size:8px 8px;font-family:Inter,system-ui,sans-serif;color:var(--ink);padding:24px}
+.top{max-width:1100px;margin:0 auto 20px}
+.top h1{font-family:Bangers,cursive;font-size:42px;letter-spacing:1px;margin:0}
+.top p{font-family:'Permanent Marker',cursive;font-size:15px;margin:6px 0}
+.grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:var(--white);border:5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:12px}
+.head{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.num{font-family:Bangers,cursive;font-size:22px}
+.qid{margin-left:auto;font-family:'Permanent Marker',cursive;font-size:12px;color:#777}
+.tag{font-family:'Permanent Marker',cursive;font-size:11px;color:#fff;background:var(--ink);padding:2px 8px}
+.tag.d{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.tag.multi{background:#ffd60a;color:var(--ink)}
+.qi{width:100%;aspect-ratio:16/10;object-fit:cover;border:4px solid var(--ink);display:block;margin-bottom:10px}
+.noimg{display:flex;align-items:center;justify-content:center;font-family:Bangers,cursive;font-size:18px;color:#fff;background:repeating-linear-gradient(45deg,#bbb,#bbb 12px,#999 12px,#999 24px)}
+.qt{font-weight:900;font-size:16px;line-height:1.3}
+.qz{font-size:14px;color:#444;margin:3px 0 8px}
+.opts{list-style:none;padding:0;margin:0 0 8px}
+.opt{font-size:13.5px;padding:5px 8px;border:2px solid #ddd;margin-bottom:5px;border-radius:0}
+.opt.right{background:var(--green);border-color:var(--ink);font-weight:700}
+.opt b{color:var(--ink)}
+.opt .z{display:block;font-size:12px;color:#555}
+.opt.right .z{color:#06400f}
+.exp{font-size:12.5px;background:var(--paper);border:3px solid var(--ink);padding:8px 10px;line-height:1.45}
+.exp b{font-family:Bangers,cursive;font-size:16px;letter-spacing:.5px;margin-right:4px}
+.exp .z,.opt .z{}
+.z{display:block}
+</style></head><body>
+<div class="top">
+  <h1>GAME SENSE — QUESTION REVIEW</h1>
+  <p>32 questions · 32/32 with art · green = correct answer · EN + 中文 shown together</p>
+  <p>评审用：圈出要改的题/选项/解析，或要重出的图。English 默认面向终端用户，中文为可切备选。</p>
+</div>
+<div class="grid">
+    <div class="card">
+      <div class="head">
+        <span class="num">#1</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">1.1</span>
+      </div>
+      <img class="qi" src="q/1.1.png" alt="" loading="lazy">
+      <div class="qt">What is a game&#x27;s &quot;core loop&quot;?</div>
+      <div class="qz">什么是游戏的「核心循环 (core loop)」？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>The short repeating sequence of actions a player does most of the time<span class="z">玩家绝大部分时间反复执行的那段短动作序列</span></li><li class="opt"><b></b>The opening cutscene that plays once<span class="z">只在开场播一次的过场动画</span></li><li class="opt"><b></b>The final boss fight<span class="z">最终 Boss 战</span></li><li class="opt"><b></b>The credits screen<span class="z">结算名单画面</span></li></ul>
+      <div class="exp"><b>WHY</b> Core loop = the do-it-again unit (aim→shoot→reward→repeat). Everything else wraps around it.
+        <span class="z">核心循环就是&quot;再来一次&quot;的最小单元，其余系统都包在它外面。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#2</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">1.2</span>
+      </div>
+      <img class="qi" src="q/1.2.png" alt="" loading="lazy">
+      <div class="qt">A new player should ideally understand a scroll-feed mini-game within roughly…</div>
+      <div class="qz">在信息流里刷到的小游戏，新玩家理想情况下应在大约多久内看懂？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>A couple of seconds, with no tutorial<span class="z">几秒内，且不需要教程</span></li><li class="opt"><b></b>2–3 minutes after reading instructions<span class="z">读完说明后 2–3 分钟</span></li><li class="opt"><b></b>After completing a settings step<span class="z">做完设置步骤之后</span></li><li class="opt"><b></b>After a mandatory account signup<span class="z">强制注册账号之后</span></li></ul>
+      <div class="exp"><b>WHY</b> Zero-context, near-zero patience: self-explanatory UI beats explanatory text.
+        <span class="z">零上下文、近乎零耐心，自解释的 UI 胜过解释性文案。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#3</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">1.3</span>
+      </div>
+      <img class="qi" src="q/1.3.png" alt="" loading="lazy">
+      <div class="qt">Which reward schedule tends to be the most engaging (and habit-forming)?</div>
+      <div class="qz">哪种奖励节奏通常最能吸引人（也最易养成习惯）？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Variable / intermittent reward<span class="z">可变（间歇）奖励</span></li><li class="opt"><b></b>Fixed reward every single action<span class="z">每个动作都给固定奖励</span></li><li class="opt"><b></b>No reward at all<span class="z">完全不给奖励</span></li><li class="opt"><b></b>One reward only at the very end<span class="z">只在最末尾给一次奖励</span></li></ul>
+      <div class="exp"><b>WHY</b> Variable ratio reinforcement is the strongest driver of repeat behavior.
+        <span class="z">可变比率强化是重复行为最强的驱动力。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#4</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">1.4</span>
+      </div>
+      <img class="qi" src="q/1.4.png" alt="" loading="lazy">
+      <div class="qt">&quot;Difficulty curve&quot; problems most often show up as…</div>
+      <div class="qz">「难度曲线」问题最常表现为……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>A sudden spike or a flat boring stretch<span class="z">突然的陡峰，或一段平坦无聊的区间</span></li><li class="opt"><b></b>Too many color choices<span class="z">颜色选项太多</span></li><li class="opt"><b></b>A long credits sequence<span class="z">过长的结算名单</span></li><li class="opt"><b></b>Small file size<span class="z">文件体积太小</span></li></ul>
+      <div class="exp"><b>WHY</b> Good pacing ramps challenge smoothly; spikes frustrate, flats bore.
+        <span class="z">好的节奏让难度平滑爬升；陡峰让人挫败，平坦让人无聊。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#5</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">1.5</span>
+      </div>
+      <img class="qi" src="q/1.5.png" alt="" loading="lazy">
+      <div class="qt">&quot;Game feel&quot; / &quot;juice&quot; mainly refers to…</div>
+      <div class="qz">「手感 / juice」主要指……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>The immediate sensory feedback that makes actions feel satisfying<span class="z">让动作&quot;爽&quot;的即时感官反馈</span></li><li class="opt"><b></b>The price of the game<span class="z">游戏售价</span></li><li class="opt"><b></b>The number of levels<span class="z">关卡数量</span></li><li class="opt"><b></b>The size of the dev team<span class="z">团队规模</span></li></ul>
+      <div class="exp"><b>WHY</b> Juice = the layer of feedback (shake, particles, sound) on top of mechanics.
+        <span class="z">juice 是叠在机制之上的反馈层（震屏、粒子、音效）。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#6</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">1.6</span>
+      </div>
+      <img class="qi" src="q/1.6.png" alt="" loading="lazy">
+      <div class="qt">&quot;Flow state&quot; is best sustained when challenge is…</div>
+      <div class="qz">当难度处于什么状态时，最能维持「心流 (flow)」？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Balanced just above the player&#x27;s current skill<span class="z">略高于玩家当前技能、保持平衡</span></li><li class="opt"><b></b>Far above the player&#x27;s skill<span class="z">远高于玩家技能</span></li><li class="opt"><b></b>Far below the player&#x27;s skill<span class="z">远低于玩家技能</span></li><li class="opt"><b></b>Random and unpredictable<span class="z">完全随机不可预测</span></li></ul>
+      <div class="exp"><b>WHY</b> Too hard → anxiety, too easy → boredom; flow sits in between.
+        <span class="z">太难→焦虑，太易→无聊，心流在两者之间。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#7</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">1.7</span>
+      </div>
+      <img class="qi" src="q/1.7.png" alt="" loading="lazy">
+      <div class="qt">The best way to teach a game&#x27;s first mechanic is usually…</div>
+      <div class="qz">教会玩家游戏第一个机制，通常最好的方式是……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Let them do it once in a safe, guided moment (learning by doing)<span class="z">在安全、被引导的瞬间让他们先做一次（做中学）</span></li><li class="opt"><b></b>Show a long text tutorial first<span class="z">先看一大段文字教程</span></li><li class="opt"><b></b>Make them watch a 2-minute video<span class="z">让他们看 2 分钟视频</span></li><li class="opt"><b></b>Hide it and hope they discover it<span class="z">藏起来，指望他们自己发现</span></li></ul>
+      <div class="exp"><b>WHY</b> Learning by doing beats reading; a guided first success teaches fastest.
+        <span class="z">做中学胜过阅读，一次被引导的成功最快教会人。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#8</span>
+        <span class="tag" style="background:#2c6df4">CORE DESIGN</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">1.8</span>
+      </div>
+      <img class="qi" src="q/1.8.png" alt="" loading="lazy">
+      <div class="qt">Win and lose states in a game should be…</div>
+      <div class="qz">游戏的胜利/失败状态应当……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Immediately clear and unambiguous to the player<span class="z">对玩家即时、清晰、无歧义</span></li><li class="opt"><b></b>Subtle and easy to miss<span class="z">微妙、容易被忽略</span></li><li class="opt"><b></b>Only shown in a menu<span class="z">只在菜单里显示</span></li><li class="opt"><b></b>Decided by the developer afterwards<span class="z">由开发者事后判定</span></li></ul>
+      <div class="exp"><b>WHY</b> Players must always know if they&#x27;re winning or losing — feedback drives action.
+        <span class="z">玩家必须随时知道自己是赢是输——反馈驱动行动。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#9</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">2.1</span>
+      </div>
+      <img class="qi" src="q/2.1.png" alt="" loading="lazy">
+      <div class="qt">An &quot;affordance&quot; in UI design is…</div>
+      <div class="qz">UI 设计中的「可供性 (affordance)」是指……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>A property that suggests how an element can be used<span class="z">暗示元素该如何被使用的属性</span></li><li class="opt"><b></b>The cost of a feature<span class="z">某功能的成本</span></li><li class="opt"><b></b>A loading animation<span class="z">加载动画</span></li><li class="opt"><b></b>A type of font<span class="z">一种字体</span></li></ul>
+      <div class="exp"><b>WHY</b> A button that looks pressable affords pressing. Signifiers make affordances visible.
+        <span class="z">看起来能按的按钮就&quot;可供&quot;按压；signifier 让可供性可见。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#10</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">2.2</span>
+      </div>
+      <img class="qi" src="q/2.2.png" alt="" loading="lazy">
+      <div class="qt">Fitts&#x27;s Law implies that a tap target should be…</div>
+      <div class="qz">Fitts 定律意味着点击目标应当……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Bigger and/or closer to be faster to hit<span class="z">更大、更近，从而更快命中</span></li><li class="opt"><b></b>Always in the exact center<span class="z">永远放在正中心</span></li><li class="opt"><b></b>The same color as the background<span class="z">跟背景同色</span></li><li class="opt"><b></b>Hidden until hovered<span class="z">悬停前隐藏</span></li></ul>
+      <div class="exp"><b>WHY</b> Time to target ∝ distance / size. Big, near targets are fast.
+        <span class="z">命中时间正比于距离/尺寸，大而近的目标更快。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#11</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">2.3</span>
+      </div>
+      <img class="qi" src="q/2.3.png" alt="" loading="lazy">
+      <div class="qt">Hick&#x27;s Law suggests that adding more options to a menu…</div>
+      <div class="qz">Hick 定律表明，给菜单增加更多选项会……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Increases the time to decide<span class="z">增加做决定的时间</span></li><li class="opt"><b></b>Has no effect on decision time<span class="z">对决策时间没有影响</span></li><li class="opt"><b></b>Always improves usability<span class="z">总能提升可用性</span></li><li class="opt"><b></b>Reduces the time to decide<span class="z">缩短做决定的时间</span></li></ul>
+      <div class="exp"><b>WHY</b> Decision time grows with the number of choices — fewer, clearer options win.
+        <span class="z">决策时间随选项数量增长——更少更清晰的选项更优。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#12</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">2.4</span>
+      </div>
+      <img class="qi" src="q/2.4.png" alt="" loading="lazy">
+      <div class="qt">On touch screens, a comfortable minimum tap-target size is roughly…</div>
+      <div class="qz">触屏上，舒适的最小点击目标尺寸大约是……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>44 px (~iOS HIG)<span class="z">44 像素（约 iOS 规范）</span></li><li class="opt"><b></b>8 px<span class="z">8 像素</span></li><li class="opt"><b></b>16 px<span class="z">16 像素</span></li><li class="opt"><b></b>200 px<span class="z">200 像素</span></li></ul>
+      <div class="exp"><b>WHY</b> ~44pt/48dp is the common floor so fingers don&#x27;t mis-tap.
+        <span class="z">约 44pt/48dp 是常见下限，避免手指误触。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#13</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">2.5</span>
+      </div>
+      <img class="qi" src="q/2.5.png" alt="" loading="lazy">
+      <div class="qt">Roughly how long can UI feedback be delayed before it stops feeling &quot;instant&quot;?</div>
+      <div class="qz">UI 反馈延迟大约超过多少，就不再感觉是「即时」的？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>~100 ms<span class="z">约 100 毫秒</span></li><li class="opt"><b></b>~1 second<span class="z">约 1 秒</span></li><li class="opt"><b></b>~3 seconds<span class="z">约 3 秒</span></li><li class="opt"><b></b>~10 seconds<span class="z">约 10 秒</span></li></ul>
+      <div class="exp"><b>WHY</b> ~0.1s feels instant; ~1s keeps flow; &gt;10s loses attention.
+        <span class="z">约 0.1 秒感觉即时，约 1 秒维持心流，超 10 秒注意力流失。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#14</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">2.6</span>
+      </div>
+      <img class="qi" src="q/2.6.png" alt="" loading="lazy">
+      <div class="qt">Jakob&#x27;s Law states that users…</div>
+      <div class="qz">Jakob 定律指出，用户……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Expect your product to work like the other products they already know<span class="z">期望你的产品像他们已熟悉的其他产品一样运作</span></li><li class="opt"><b></b>Always prefer brand-new interaction patterns<span class="z">总是偏好全新的交互模式</span></li><li class="opt"><b></b>Never read any text<span class="z">从不读任何文字</span></li><li class="opt"><b></b>Want maximum customization<span class="z">想要最大程度的自定义</span></li></ul>
+      <div class="exp"><b>WHY</b> Lean on familiar conventions; novelty for its own sake costs usability.
+        <span class="z">借力熟悉的约定，为新而新会牺牲可用性。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#15</span>
+        <span class="tag" style="background:#9b59b6">INTERACTION</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">2.7</span>
+      </div>
+      <img class="qi" src="q/2.7.png" alt="" loading="lazy">
+      <div class="qt">A good error message should mainly…</div>
+      <div class="qz">一条好的错误提示主要应当……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Explain what happened and how to recover<span class="z">说明发生了什么以及如何恢复</span></li><li class="opt"><b></b>Blame the user<span class="z">责怪用户</span></li><li class="opt"><b></b>Show a raw error code only<span class="z">只显示一串原始错误码</span></li><li class="opt"><b></b>Disappear instantly<span class="z">瞬间消失</span></li></ul>
+      <div class="exp"><b>WHY</b> Errors should be clear, blameless, and recoverable.
+        <span class="z">错误提示应清晰、不指责、可恢复。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#16</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">3.1</span>
+      </div>
+      <img class="qi" src="q/3.1.png" alt="" loading="lazy">
+      <div class="qt">&quot;Easing&quot; in animation refers to…</div>
+      <div class="qz">动画里的「缓动 (easing)」是指……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Varying speed over time instead of moving linearly<span class="z">速度随时间变化，而非匀速直线运动</span></li><li class="opt"><b></b>Lowering the resolution<span class="z">降低分辨率</span></li><li class="opt"><b></b>Muting the sound<span class="z">静音</span></li><li class="opt"><b></b>Reducing the frame rate<span class="z">降低帧率</span></li></ul>
+      <div class="exp"><b>WHY</b> Ease-in/out makes motion feel natural; linear feels robotic.
+        <span class="z">缓入缓出让运动自然，匀速显得机械。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#17</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">3.2</span>
+      </div>
+      <img class="qi" src="q/3.2.png" alt="" loading="lazy">
+      <div class="qt">&quot;Screenshake&quot; is mainly used to…</div>
+      <div class="qz">「震屏 (screenshake)」主要用来……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Amplify the sense of impact<span class="z">放大打击/冲击感</span></li><li class="opt"><b></b>Save battery<span class="z">省电</span></li><li class="opt"><b></b>Reduce file size<span class="z">减小文件体积</span></li><li class="opt"><b></b>Translate text<span class="z">翻译文本</span></li></ul>
+      <div class="exp"><b>WHY</b> A few frames of shake on impact sells weight and force.
+        <span class="z">命中瞬间几帧抖动能传达重量与力量。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#18</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">3.3</span>
+      </div>
+      <img class="qi" src="q/3.3.png" alt="" loading="lazy">
+      <div class="qt">Anticipation and follow-through (12 animation principles) help by…</div>
+      <div class="qz">预备动作与跟随动作（动画 12 原则）的作用是……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Making motion read clearly and feel weighty<span class="z">让运动易读、有重量感</span></li><li class="opt"><b></b>Increasing the polygon count<span class="z">增加多边形数量</span></li><li class="opt"><b></b>Encrypting the assets<span class="z">加密资源</span></li><li class="opt"><b></b>Adding more menus<span class="z">增加菜单</span></li></ul>
+      <div class="exp"><b>WHY</b> A small wind-up + overshoot makes actions legible and alive.
+        <span class="z">小幅蓄力+回弹让动作清晰且有生命力。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#19</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">3.4</span>
+      </div>
+      <img class="qi" src="q/3.4.png" alt="" loading="lazy">
+      <div class="qt">When should you give immediate audio/visual feedback for a tap?</div>
+      <div class="qz">点击操作的音/画反馈应在何时给出？</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>On the press, before the result resolves<span class="z">在按下那一刻，先于结果产生</span></li><li class="opt"><b></b>Only after a network round-trip<span class="z">等网络往返之后</span></li><li class="opt"><b></b>Only at the end of the session<span class="z">只在整局结束时</span></li><li class="opt"><b></b>Never, to keep it clean<span class="z">永远不给，保持干净</span></li></ul>
+      <div class="exp"><b>WHY</b> Instant feedback on press confirms the input even if the result lags.
+        <span class="z">按下即反馈，即使结果有延迟也先确认了输入。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#20</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">3.5</span>
+      </div>
+      <img class="qi" src="q/3.5.png" alt="" loading="lazy">
+      <div class="qt">&quot;Hit-stop&quot; (a brief freeze on impact) is used to…</div>
+      <div class="qz">「顿帧 (hit-stop)」（命中瞬间短暂定格）用来……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Emphasize the weight and impact of a hit<span class="z">强调一次命中的重量与冲击</span></li><li class="opt"><b></b>Save memory<span class="z">节省内存</span></li><li class="opt"><b></b>Hide a bug<span class="z">掩盖 bug</span></li><li class="opt"><b></b>Skip a frame to run faster<span class="z">跳帧以提速</span></li></ul>
+      <div class="exp"><b>WHY</b> A few frames of freeze on impact makes hits feel powerful.
+        <span class="z">命中时定格几帧，让打击感更有力量。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#21</span>
+        <span class="tag" style="background:#e63946">GAME FEEL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">3.6</span>
+      </div>
+      <img class="qi" src="q/3.6.png" alt="" loading="lazy">
+      <div class="qt">Particle effects in games primarily serve to…</div>
+      <div class="qz">游戏里的粒子特效主要用来……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Reinforce feedback and make events feel alive<span class="z">强化反馈、让事件更有生命力</span></li><li class="opt"><b></b>Increase the download size on purpose<span class="z">故意增大下载体积</span></li><li class="opt"><b></b>Replace the core mechanic<span class="z">取代核心机制</span></li><li class="opt"><b></b>Slow the game down intentionally<span class="z">故意拖慢游戏</span></li></ul>
+      <div class="exp"><b>WHY</b> Particles are feedback garnish — they amplify, they aren&#x27;t the dish.
+        <span class="z">粒子是反馈的点缀——用来放大，而非主菜。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#22</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">4.1</span>
+      </div>
+      <img class="qi" src="q/4.1.png" alt="" loading="lazy">
+      <div class="qt">Designing for a vertical scroll-feed, you should assume the user…</div>
+      <div class="qz">为竖向信息流设计时，应假设用户……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Arrives with zero context and almost no patience<span class="z">带着零上下文、近乎零耐心进来</span></li><li class="opt"><b></b>Has read a manual first<span class="z">已经先读过说明书</span></li><li class="opt"><b></b>Will replay daily without prompting<span class="z">会每天主动回访</span></li><li class="opt"><b></b>Wants to configure settings before playing<span class="z">想先配置设置再玩</span></li></ul>
+      <div class="exp"><b>WHY</b> No rules to learn, no choices before play, instant feedback.
+        <span class="z">没有要学的规则，玩前不做选择，即点即有反馈。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#23</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">4.2</span>
+      </div>
+      <img class="qi" src="q/4.2.png" alt="" loading="lazy">
+      <div class="qt">A &quot;self-explanatory UI&quot; means…</div>
+      <div class="qz">「自解释的 UI」意味着……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>The interface teaches itself through visuals, not text walls<span class="z">界面靠视觉自我教学，而非大段文案</span></li><li class="opt"><b></b>It comes with a long PDF manual<span class="z">配一份长 PDF 手册</span></li><li class="opt"><b></b>It requires a video tutorial<span class="z">需要看视频教程</span></li><li class="opt"><b></b>It only works for returning users<span class="z">只对回访用户有效</span></li></ul>
+      <div class="exp"><b>WHY</b> Show, don&#x27;t tell — affordances over instructions.
+        <span class="z">用展示代替讲解，可供性优于说明文字。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#24</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">4.3</span>
+      </div>
+      <img class="qi" src="q/4.3.png" alt="" loading="lazy">
+      <div class="qt">For a feed mini-game, designing for &quot;one-shot&quot; play rather than retention means…</div>
+      <div class="qz">为信息流小游戏做「一次性」而非「留存」设计，意味着……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>The first encounter must be complete and satisfying on its own<span class="z">第一次相遇本身就要完整且满足</span></li><li class="opt"><b></b>Locking content behind daily streaks<span class="z">用每日连击锁住内容</span></li><li class="opt"><b></b>Requiring an account to start<span class="z">开始前要求注册</span></li><li class="opt"><b></b>Front-loading a long tutorial<span class="z">前置一段长教程</span></li></ul>
+      <div class="exp"><b>WHY</b> Assume no return visit; make the single session pay off.
+        <span class="z">别假设回访，让单局本身就值回票价。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#25</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">4.5</span>
+      </div>
+      <img class="qi" src="q/4.5.png" alt="" loading="lazy">
+      <div class="qt">On a large phone held one-handed, the easiest area for the thumb to reach is…</div>
+      <div class="qz">单手握持大屏手机时，拇指最易触达的区域是……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>The lower-center of the screen<span class="z">屏幕的下方中部</span></li><li class="opt"><b></b>The top corners<span class="z">顶部两角</span></li><li class="opt"><b></b>The very top edge<span class="z">最顶边</span></li><li class="opt"><b></b>Off-screen<span class="z">屏幕之外</span></li></ul>
+      <div class="exp"><b>WHY</b> Put primary actions in the thumb zone (bottom), not the top corners.
+        <span class="z">把主要操作放在拇指区（底部），别放顶角。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#26</span>
+        <span class="tag" style="background:#f97316">FEED UX</span>
+        <span class="tag d">ADVANCED</span><span class="tag multi">MULTI</span>
+        <span class="qid">4.6</span>
+      </div>
+      <img class="qi" src="q/4.6.png" alt="" loading="lazy">
+      <div class="qt">Which of these make a feed mini-game graspable in seconds? (Select all)</div>
+      <div class="qz">以下哪些能让信息流小游戏在几秒内被看懂？（多选）</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>No rules to learn before playing<span class="z">玩之前没有规则要学</span></li><li class="opt right"><b>✓ </b>Self-explanatory, visual UI<span class="z">自解释的视觉化 UI</span></li><li class="opt right"><b>✓ </b>Instant feedback on the first tap<span class="z">第一次点击就有即时反馈</span></li><li class="opt"><b></b>A mandatory settings step first<span class="z">先来一个强制设置步骤</span></li><li class="opt"><b></b>A required signup<span class="z">强制注册</span></li></ul>
+      <div class="exp"><b>WHY</b> The first three reduce time-to-understand; settings and signup add friction before the fun.
+        <span class="z">前三项缩短理解时间，设置和注册在乐趣前增加摩擦。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#27</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">6.1</span>
+      </div>
+      <img class="qi" src="q/6.1.png" alt="" loading="lazy">
+      <div class="qt">In a UGC social game, &quot;a feed needs a verb&quot; means…</div>
+      <div class="qz">UGC 社交游戏里「feed needs a verb（信息流需要一个动词）」是指……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Viewers need an action to take on content, which notifies the author<span class="z">观众需要一个能对内容施加的动作，且会通知作者</span></li><li class="opt"><b></b>Every post must contain a verb in its title<span class="z">每条内容标题里必须含动词</span></li><li class="opt"><b></b>The feed should scroll automatically<span class="z">信息流应自动滚动</span></li><li class="opt"><b></b>Authors should post more often<span class="z">作者应更频繁地发帖</span></li></ul>
+      <div class="exp"><b>WHY</b> A passive feed dies; a verb (kept/popped/remixed) creates a loop back to the author.
+        <span class="z">纯被动的 feed 会死，一个动词会把价值回流给作者，形成循环。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#28</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">6.2</span>
+      </div>
+      <img class="qi" src="q/6.2.png" alt="" loading="lazy">
+      <div class="qt">A healthy social notification (e.g. &quot;X reacted to your work&quot;) should…</div>
+      <div class="qz">一条健康的社交通知（如「X 对你的作品有反应」）应当……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Be triggered by another real user acting on your content, with self-guard &amp; dedupe<span class="z">由其他真实用户对你的内容操作触发，并做自我屏蔽与去重</span></li><li class="opt"><b></b>Be sent to yourself for your own actions<span class="z">因你自己的操作而发给自己</span></li><li class="opt"><b></b>Repeat every minute regardless of activity<span class="z">不论是否有活动每分钟重复</span></li><li class="opt"><b></b>Come from fabricated fake users<span class="z">来自编造的假用户</span></li></ul>
+      <div class="exp"><b>WHY</b> Notify on others&#x27; actions; never self-notify; never fake users.
+        <span class="z">因他人操作而通知，不自我通知，不用假用户。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#29</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">6.3</span>
+      </div>
+      <img class="qi" src="q/6.3.png" alt="" loading="lazy">
+      <div class="qt">For a social game&#x27;s cold-start (no real users yet), the best fallback is…</div>
+      <div class="qz">社交游戏冷启动（还没有真实用户）时，最佳兜底是……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>A real subject that needs no fake identity (e.g. &quot;you vs. your AI self&quot;)<span class="z">不需要假身份的真实主体（如「你 vs 你的 AI 分身」）</span></li><li class="opt"><b></b>Auto-generated fake user profiles<span class="z">自动生成的假用户资料</span></li><li class="opt"><b></b>An empty screen<span class="z">一个空白屏</span></li><li class="opt"><b></b>Copying another app&#x27;s user list<span class="z">抄另一个 app 的用户列表</span></li></ul>
+      <div class="exp"><b>WHY</b> Fake users are dead-ends that expose the fake; use a real, safe subject.
+        <span class="z">假用户是会暴露的死路，用真实、安全的主体兜底。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#30</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">6.4</span>
+      </div>
+      <img class="qi" src="q/6.4.png" alt="" loading="lazy">
+      <div class="qt">&quot;Virality&quot; in a product loop usually comes from…</div>
+      <div class="qz">产品循环里的「病毒性」通常来自……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Each user&#x27;s action naturally surfacing the product to new users<span class="z">每个用户的行为自然把产品带到新用户面前</span></li><li class="opt"><b></b>Buying more ads<span class="z">买更多广告</span></li><li class="opt"><b></b>A bigger app icon<span class="z">更大的应用图标</span></li><li class="opt"><b></b>Longer loading screens<span class="z">更长的加载页</span></li></ul>
+      <div class="exp"><b>WHY</b> Built-in sharing as a side effect of normal use beats paid acquisition.
+        <span class="z">把分享内建为正常使用的副产品，胜过付费获取。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#31</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">BASIC</span>
+        <span class="qid">6.5</span>
+      </div>
+      <img class="qi" src="q/6.5.png" alt="" loading="lazy">
+      <div class="qt">A &quot;leaderboard rivalry&quot; notification (e.g. &quot;X just beat your score&quot;) works because it…</div>
+      <div class="qz">「排行榜对手」通知（如「X 刚超过了你的分数」）有效，是因为它……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Gives the beaten player a reason to come back and reclaim their spot<span class="z">给被超过的玩家一个回来夺回名次的理由</span></li><li class="opt"><b></b>Spams everyone equally<span class="z">平等地骚扰所有人</span></li><li class="opt"><b></b>Hides the score<span class="z">隐藏分数</span></li><li class="opt"><b></b>Deletes the leaderboard<span class="z">删除排行榜</span></li></ul>
+      <div class="exp"><b>WHY</b> Competition + a personal stake pulls the rival back into the loop.
+        <span class="z">竞争+切身利害把对手重新拉回循环。</span></div>
+    </div>
+    <div class="card">
+      <div class="head">
+        <span class="num">#32</span>
+        <span class="tag" style="background:#3fb950">SOCIAL</span>
+        <span class="tag d">ADVANCED</span>
+        <span class="qid">6.6</span>
+      </div>
+      <img class="qi" src="q/6.6.png" alt="" loading="lazy">
+      <div class="qt">Retention and virality differ in that…</div>
+      <div class="qz">留存与病毒性的区别在于……</div>
+      <ul class="opts"><li class="opt right"><b>✓ </b>Retention brings the same users back; virality brings new users in<span class="z">留存让同一批用户回来，病毒性带来新用户</span></li><li class="opt"><b></b>They mean exactly the same thing<span class="z">二者意思完全相同</span></li><li class="opt"><b></b>Virality only matters for paid ads<span class="z">病毒性只对付费广告有意义</span></li><li class="opt"><b></b>Retention only matters on launch day<span class="z">留存只在上线当天有意义</span></li></ul>
+      <div class="exp"><b>WHY</b> Different loops: retention = come-back, virality = bring-a-friend.
+        <span class="z">两套循环：留存=回来，病毒性=带朋友来。</span></div>
+    </div></div>
+</body></html>
