@@ -68,7 +68,8 @@
     "explain": {
       "en": "Zero-context, near-zero patience: self-explanatory UI beats explanatory text.",
       "zh": "零上下文、近乎零耐心，自解释的 UI 胜过解释性文案。"
-    }
+    },
+    "img": "1.2.png"
   },
   {
     "id": "1.3",
@@ -103,7 +104,8 @@
     "explain": {
       "en": "Variable ratio reinforcement is the strongest driver of repeat behavior.",
       "zh": "可变比率强化是重复行为最强的驱动力。"
-    }
+    },
+    "img": "1.3.png"
   },
   {
     "id": "1.4",
@@ -138,7 +140,8 @@
     "explain": {
       "en": "Good pacing ramps challenge smoothly; spikes frustrate, flats bore.",
       "zh": "好的节奏让难度平滑爬升；陡峰让人挫败，平坦让人无聊。"
-    }
+    },
+    "img": "1.4.png"
   },
   {
     "id": "1.5",
@@ -173,7 +176,8 @@
     "explain": {
       "en": "Juice = the layer of feedback (shake, particles, sound) on top of mechanics.",
       "zh": "juice 是叠在机制之上的反馈层（震屏、粒子、音效）。"
-    }
+    },
+    "img": "1.5.png"
   },
   {
     "id": "1.6",
@@ -208,7 +212,8 @@
     "explain": {
       "en": "Too hard → anxiety, too easy → boredom; flow sits in between.",
       "zh": "太难→焦虑，太易→无聊，心流在两者之间。"
-    }
+    },
+    "img": "1.6.png"
   },
   {
     "id": "1.7",
@@ -243,7 +248,8 @@
     "explain": {
       "en": "Learning by doing beats reading; a guided first success teaches fastest.",
       "zh": "做中学胜过阅读，一次被引导的成功最快教会人。"
-    }
+    },
+    "img": "1.7.png"
   },
   {
     "id": "1.8",
@@ -278,7 +284,8 @@
     "explain": {
       "en": "Players must always know if they're winning or losing — feedback drives action.",
       "zh": "玩家必须随时知道自己是赢是输——反馈驱动行动。"
-    }
+    },
+    "img": "1.8.png"
   },
   {
     "id": "2.1",
@@ -313,7 +320,8 @@
     "explain": {
       "en": "A button that looks pressable affords pressing. Signifiers make affordances visible.",
       "zh": "看起来能按的按钮就\"可供\"按压；signifier 让可供性可见。"
-    }
+    },
+    "img": "2.1.png"
   },
   {
     "id": "2.2",
@@ -384,7 +392,8 @@
     "explain": {
       "en": "Decision time grows with the number of choices — fewer, clearer options win.",
       "zh": "决策时间随选项数量增长——更少更清晰的选项更优。"
-    }
+    },
+    "img": "2.3.png"
   },
   {
     "id": "2.4",
@@ -419,7 +428,8 @@
     "explain": {
       "en": "~44pt/48dp is the common floor so fingers don't mis-tap.",
       "zh": "约 44pt/48dp 是常见下限，避免手指误触。"
-    }
+    },
+    "img": "2.4.png"
   },
   {
     "id": "2.5",
@@ -454,7 +464,8 @@
     "explain": {
       "en": "~0.1s feels instant; ~1s keeps flow; >10s loses attention.",
       "zh": "约 0.1 秒感觉即时，约 1 秒维持心流，超 10 秒注意力流失。"
-    }
+    },
+    "img": "2.5.png"
   },
   {
     "id": "2.6",
@@ -489,7 +500,8 @@
     "explain": {
       "en": "Lean on familiar conventions; novelty for its own sake costs usability.",
       "zh": "借力熟悉的约定，为新而新会牺牲可用性。"
-    }
+    },
+    "img": "2.6.png"
   },
   {
     "id": "2.7",
@@ -524,7 +536,8 @@
     "explain": {
       "en": "Errors should be clear, blameless, and recoverable.",
       "zh": "错误提示应清晰、不指责、可恢复。"
-    }
+    },
+    "img": "2.7.png"
   },
   {
     "id": "3.1",
@@ -559,7 +572,8 @@
     "explain": {
       "en": "Ease-in/out makes motion feel natural; linear feels robotic.",
       "zh": "缓入缓出让运动自然，匀速显得机械。"
-    }
+    },
+    "img": "3.1.png"
   },
   {
     "id": "3.2",
@@ -630,7 +644,8 @@
     "explain": {
       "en": "A small wind-up + overshoot makes actions legible and alive.",
       "zh": "小幅蓄力+回弹让动作清晰且有生命力。"
-    }
+    },
+    "img": "3.3.png"
   },
   {
     "id": "3.4",
@@ -665,7 +680,8 @@
     "explain": {
       "en": "Instant feedback on press confirms the input even if the result lags.",
       "zh": "按下即反馈，即使结果有延迟也先确认了输入。"
-    }
+    },
+    "img": "3.4.png"
   },
   {
     "id": "3.5",
@@ -700,7 +716,8 @@
     "explain": {
       "en": "A few frames of freeze on impact makes hits feel powerful.",
       "zh": "命中时定格几帧，让打击感更有力量。"
-    }
+    },
+    "img": "3.5.png"
   },
   {
     "id": "3.6",
@@ -735,7 +752,8 @@
     "explain": {
       "en": "Particles are feedback garnish — they amplify, they aren't the dish.",
       "zh": "粒子是反馈的点缀——用来放大，而非主菜。"
-    }
+    },
+    "img": "3.6.png"
   },
   {
     "id": "4.1",
@@ -770,7 +788,8 @@
     "explain": {
       "en": "No rules to learn, no choices before play, instant feedback.",
       "zh": "没有要学的规则，玩前不做选择，即点即有反馈。"
-    }
+    },
+    "img": "4.1.png"
   },
   {
     "id": "4.2",
@@ -805,7 +824,8 @@
     "explain": {
       "en": "Show, don't tell — affordances over instructions.",
       "zh": "用展示代替讲解，可供性优于说明文字。"
-    }
+    },
+    "img": "4.2.png"
   },
   {
     "id": "4.3",
@@ -840,7 +860,8 @@
     "explain": {
       "en": "Assume no return visit; make the single session pay off.",
       "zh": "别假设回访，让单局本身就值回票价。"
-    }
+    },
+    "img": "4.3.png"
   },
   {
     "id": "4.5",
@@ -875,7 +896,8 @@
     "explain": {
       "en": "Put primary actions in the thumb zone (bottom), not the top corners.",
       "zh": "把主要操作放在拇指区（底部），别放顶角。"
-    }
+    },
+    "img": "4.5.png"
   },
   {
     "id": "4.6",
@@ -916,7 +938,8 @@
     "explain": {
       "en": "The first three reduce time-to-understand; settings and signup add friction before the fun.",
       "zh": "前三项缩短理解时间，设置和注册在乐趣前增加摩擦。"
-    }
+    },
+    "img": "4.6.png"
   },
   {
     "id": "6.1",
@@ -951,7 +974,8 @@
     "explain": {
       "en": "A passive feed dies; a verb (kept/popped/remixed) creates a loop back to the author.",
       "zh": "纯被动的 feed 会死，一个动词会把价值回流给作者，形成循环。"
-    }
+    },
+    "img": "6.1.png"
   },
   {
     "id": "6.2",
@@ -986,7 +1010,8 @@
     "explain": {
       "en": "Notify on others' actions; never self-notify; never fake users.",
       "zh": "因他人操作而通知，不自我通知，不用假用户。"
-    }
+    },
+    "img": "6.2.png"
   },
   {
     "id": "6.3",
@@ -1021,7 +1046,8 @@
     "explain": {
       "en": "Fake users are dead-ends that expose the fake; use a real, safe subject.",
       "zh": "假用户是会暴露的死路，用真实、安全的主体兜底。"
-    }
+    },
+    "img": "6.3.png"
   },
   {
     "id": "6.4",
@@ -1056,7 +1082,8 @@
     "explain": {
       "en": "Built-in sharing as a side effect of normal use beats paid acquisition.",
       "zh": "把分享内建为正常使用的副产品，胜过付费获取。"
-    }
+    },
+    "img": "6.4.png"
   },
   {
     "id": "6.5",
@@ -1091,7 +1118,8 @@
     "explain": {
       "en": "Competition + a personal stake pulls the rival back into the loop.",
       "zh": "竞争+切身利害把对手重新拉回循环。"
-    }
+    },
+    "img": "6.5.png"
   },
   {
     "id": "6.6",
@@ -1126,6 +1154,7 @@
     "explain": {
       "en": "Different loops: retention = come-back, virality = bring-a-friend.",
       "zh": "两套循环：留存=回来，病毒性=带朋友来。"
-    }
+    },
+    "img": "6.6.png"
   }
 ]
