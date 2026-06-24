@@ -1,17 +1,44 @@
 export interface QOption { en: string; zh: string; }
+
+export type QType = 'mcq' | 'slider' | 'drag';
+
+/** Slider: drag a value into the correct range. Optional live preview reacts as you slide. */
+export interface SliderConfig {
+  min: number;
+  max: number;
+  step: number;
+  start: number;
+  target: [number, number]; // correct range (inclusive)
+  unit?: string;
+  low: QOption;             // left-end label
+  high: QOption;            // right-end label
+  preview?: 'size' | 'zone';
+}
+
+/** Drag-to-bucket: classify each item into the YES or NO bucket. */
+export interface DragItem { label: QOption; correct: boolean; } // correct = belongs in the YES bucket
+export interface DragConfig {
+  items: DragItem[];
+  yes: QOption; // YES / first bucket label
+  no: QOption;  // NO / second bucket label
+}
+
 export interface Question {
   id: string;
   cat: 'core' | 'ixd' | 'feel' | 'feed' | 'eng' | 'social';
   diff: 'B' | 'A';
-  multi: boolean;
+  type?: QType;          // default 'mcq'
+  multi?: boolean;       // mcq only
   q: QOption;
-  options: QOption[];
-  correct: number[];
+  options?: QOption[];   // mcq only
+  correct?: number[];    // mcq only
+  slider?: SliderConfig; // slider only
+  drag?: DragConfig;     // drag only
   explain: QOption;
-  img?: string; // optional comic illustration filename under public/q/
+  img?: string;
 }
 
-/** A question with its options pre-shuffled for display. */
+/** An mcq question with its options pre-shuffled for display. */
 export interface ShuffledQuestion extends Question {
   shuffled: { opt: QOption; isCorrect: boolean }[];
 }
@@ -27,11 +54,11 @@ export interface QuizResult {
 }
 
 export interface WorkEntry {
-  id: string;          // unique work id
+  id: string;
   title: string;
   url: string;
   note?: string;
-  authorId: string;    // telegram id (or local id when standalone)
+  authorId: string;
   authorName: string;
   ts: number;
   cheers: number;

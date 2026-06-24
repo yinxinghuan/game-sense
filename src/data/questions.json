@@ -1,5 +1,192 @@
 [
   {
+    "id": "S1",
+    "cat": "ixd",
+    "diff": "B",
+    "type": "slider",
+    "q": {
+      "en": "Drag to size a button so it's comfy to tap with a thumb.",
+      "zh": "拖动，把按钮调到拇指点着舒服的大小。"
+    },
+    "img": "2.4.png",
+    "slider": {
+      "min": 16,
+      "max": 96,
+      "step": 2,
+      "start": 16,
+      "target": [
+        44,
+        72
+      ],
+      "unit": "px",
+      "low": {
+        "en": "tiny",
+        "zh": "太小"
+      },
+      "high": {
+        "en": "huge",
+        "zh": "巨大"
+      },
+      "preview": "size"
+    },
+    "explain": {
+      "en": "~44px is the comfy minimum tap target — big enough that thumbs don't miss.",
+      "zh": "约 44px 是舒适的最小点击目标——大到拇指不会按偏。"
+    }
+  },
+  {
+    "id": "S2",
+    "cat": "core",
+    "diff": "A",
+    "type": "slider",
+    "q": {
+      "en": "Slide the difficulty into the 'flow' sweet spot — watch the face.",
+      "zh": "把难度滑到「心流」甜区——看表情找。"
+    },
+    "img": "1.6.png",
+    "slider": {
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "start": 0,
+      "target": [
+        40,
+        68
+      ],
+      "unit": "",
+      "low": {
+        "en": "too easy",
+        "zh": "太简单"
+      },
+      "high": {
+        "en": "too hard",
+        "zh": "太难"
+      },
+      "preview": "zone"
+    },
+    "explain": {
+      "en": "Flow lives just above your skill — not bored, not panicked.",
+      "zh": "心流就在略高于你技能的地方——不无聊、不慌。"
+    }
+  },
+  {
+    "id": "D1",
+    "cat": "feed",
+    "diff": "B",
+    "type": "drag",
+    "q": {
+      "en": "Drag what makes a feed game graspable in seconds vs what adds friction.",
+      "zh": "把\"让 feed 游戏秒懂\"的拖去左边，\"添堵\"的拖去右边。"
+    },
+    "img": "4.6.png",
+    "drag": {
+      "yes": {
+        "en": "GRASPABLE",
+        "zh": "秒懂"
+      },
+      "no": {
+        "en": "FRICTION",
+        "zh": "添堵"
+      },
+      "items": [
+        {
+          "label": {
+            "en": "No rules to learn",
+            "zh": "没有规则要学"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Self-explanatory UI",
+            "zh": "自解释的界面"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Instant feedback on tap",
+            "zh": "点击即时反馈"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Forced settings step",
+            "zh": "强制设置步骤"
+          },
+          "correct": false
+        },
+        {
+          "label": {
+            "en": "Required signup",
+            "zh": "强制注册"
+          },
+          "correct": false
+        }
+      ]
+    },
+    "explain": {
+      "en": "No rules, self-explanatory visuals and instant feedback win; settings and signups kill it before the fun.",
+      "zh": "无规则、自解释、即时反馈取胜；设置和注册在乐趣前劝退。"
+    }
+  },
+  {
+    "id": "D2",
+    "cat": "social",
+    "diff": "A",
+    "type": "drag",
+    "q": {
+      "en": "Sort each loop: does it bring the SAME user back, or bring NEW users in?",
+      "zh": "给每个循环分类：是把同一个用户拉回来，还是带来新用户？"
+    },
+    "img": "6.6.png",
+    "drag": {
+      "yes": {
+        "en": "RETENTION",
+        "zh": "留存"
+      },
+      "no": {
+        "en": "VIRALITY",
+        "zh": "病毒"
+      },
+      "items": [
+        {
+          "label": {
+            "en": "Daily streak reminder",
+            "zh": "每日连击提醒"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "\"You got passed!\" ping",
+            "zh": "\"你被超了\"提醒"
+          },
+          "correct": true
+        },
+        {
+          "label": {
+            "en": "Invite-a-friend reward",
+            "zh": "邀请好友奖励"
+          },
+          "correct": false
+        },
+        {
+          "label": {
+            "en": "Share your result",
+            "zh": "分享你的成绩"
+          },
+          "correct": false
+        }
+      ]
+    },
+    "explain": {
+      "en": "Retention = come back (streaks, rivalry pings). Virality = bring a friend (invites, shares).",
+      "zh": "留存=回来（连击、对手提醒）；病毒=带人来（邀请、分享）。"
+    }
+  },
+  {
     "id": "1.1",
     "cat": "core",
     "diff": "B",
